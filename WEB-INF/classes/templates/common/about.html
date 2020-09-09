@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>关于我们</title>
+<style>
+         div#div_newsinfo{
+              width:90%;
+              height:auto;
+              margin:50px auto;
+              color:black;
+         }
+         
+          div#div_newsinfo h1{
+              font-size:32px;
+              width:100%;
+              height:30px;
+              text-align:center;
+              line-height:30px;
+          
+          }
+          
+          div#div_newsinfo #p_nav{
+              font-size:18px;
+              width:100%;
+              height:30px;
+              text-align:center;
+              line-height:30px;
+          
+          }
+          
+          div#div_newsinfo #p_lead{
+              font-size:18px;
+              width:80%;
+              height:auto;
+              margin:30px auto;
+              padding:20px;
+              text-align:justify;
+              text-indent:2em;
+          
+          }
+          
+          div#div_newsinfo #p_img{
+              width:100%;
+              height:auto;
+              padding:20px;
+              text-align:center;
+          
+          }
+          
+           div#div_newsinfo #div_con{
+              font-size:18px;
+              width:100%;
+              height:auto;
+              padding:20px;
+              text-align:justify;
+              text-indent:2em;          
+          }
+          
+           div#div_newsinfo #p_page{
+              font-size:20px;
+              width:100%;
+              text-align:left;
+              padding:20px;
+          }
+          
+          div#div_newsinfo #p_page a:hover{
+              color:red;
+          
+          }
+          
+          span#span_cut{
+              display:inline-block;
+              width:100%;
+              height:10px;
+              margin:0;
+          }
+          
+          p#p_back a:hover{
+              color:red;
+          }
+          
+          /* login */
+	      input#verifyCode{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100px;
+	        height:40px;
+	        padding-left:15px;
+	     }
+    
+         img#safeCode{
+            vertical-align:middle;
+         }
+         
+         a#btn_refresh{
+            display:inline-block;
+            font-size:17px;
+         }
+	     
+	</style>
+	
+	<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+             <div th:include="/common/common-header-notype::header"></div>
+        
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">关于我们</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_newsinfo">
+         <p id="p_back"><img src="/static/images/common/backhead.png" width="25" height="25" align="top" />&nbsp;<a th:href="@{/index.html}">回到首页</a></p>
+         <h1>龙兴联泰国际家具：深圳东部家居标杆</h1>
+         
+         <p id="p_nav">
+                       作者：admin &nbsp;&nbsp;时间：2019-9-9&nbsp;&nbsp; 浏览：<span th:text="${aboutview}"></span>
+         </p>
+         <p id="p_img">
+              <img src="/static/images/common/lxlt.jpg" width="650px" />
+         </p>
+         
+         <div id="div_con">
+            <p>创建于2010年的龙兴联泰国际家具，已经成为深圳东部家居的标杆。 </p>
+            <p>该商场位于龙岗区深惠路地铁吉祥站东行200米，拥有四层楼的经营场地，总面积达5万平方米，是龙岗中心城面积最大的家具商场之一。</p>
+            <p>是现阶段龙岗片区规模较大、设施较完善、商品定位较高、格调高雅的一站式专业卖场，一楼经营客厅沙发系列，二楼板式套房系列，三楼新古典家具、实木、红木系列，四楼办公家具系列。中国古典家具、现代时尚家具、韩流、欧派，应有尽有。</p>
+            <p>该商场交通便利，位于深惠路旁，地铁3号线在商场门前经过。从罗湖、福田到商场只需半个小时车程，从惠州惠阳到商场只需10多分钟车程。
+            <p>该商场注重品质，所售家具全部从优质国内家具工厂中挑选出来具有质量保障的品牌，目前一线品牌占到了90%的比例。销售中，商场设专门的部门对家具进行抽检，对于不合格的家具商品进行清理。设有专门的服务部门，接受客户的咨询和售后投诉处理。自成立至今，该商场有效投诉为零，没有发生一起大的安全消费事故。
+            </p>  
+            <h3>服务电话:0755-89980035</h3>
+         </div>
+         
+     		  
+    </div>
+     <!-- ================== Footer  ================== -->
+        <div th:include="/common/common-footer::footer"></div>
+        
+    </div> <!--/wrapper-->
+    
+    <!--JS files-->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+   
+    //点击登陆
+	function login_ajax(){
+		var username=$('#username').val();
+		var pwd=$('#pwd').val();
+	    var verifyCode=$('#verifyCode').val();
+	    if(username!="" && pwd!="" && verifyCode!=""){
+	        $.post("/login",
+		    {"username":username,"password":pwd,"submitCode":verifyCode},
+		    function(data){
+		    	if(data=="200"){
+		    		setTimeout(function(){
+		                   $('#login_btn').css("background-color","red").css('color','white').text('成功登陆');
+		                    alert('成功！'); 
+		                    window.location="/index.html";
+		             },1000); 
+		        }else if(data=="701"){ 
+		             alert('验证码有误！');
+		           
+		        }else{
+		             alert('验证码过期，请重新获取！');
+		        }  
+	       });
+	    }else{
+	        alert("不能为空")
+	    }
+	}
+    
+	//点击退出
+	function logout_ajax(){
+	        $.get("/logout",
+		    function(data){
+		           if(data=="0"){
+			             alert('成功！'); 
+			             window.location="/index.html";
+			        }else{ 
+			             alert('失败！');
+			        } 
+	       });
+	}
+	
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    
+
+</body>
+</html>

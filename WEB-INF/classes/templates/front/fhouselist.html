@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>龙兴联泰居家攻略列表</title>
+
+ <!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+ 
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    <style>
+	   div#div_newslist a:hover{
+	        color:red;
+	   }
+       div#div_newslist{
+              width:90%;
+              height:auto;
+              margin:50px auto;
+              font-size:24px;
+              color:black;
+       }
+       
+       table{
+              width:100%;
+              height:auto;
+              color:black;
+       }
+
+       #p_nav{
+             width:100%;
+             height:40px;
+             line-height:40px;
+             text-align:center;
+             font-size:18px;
+       }
+       
+       /* login */
+	      input#verifyCode{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100px;
+	        height:40px;
+	        padding-left:15px;
+	     }
+    
+         img#safeCode{
+            vertical-align:middle;
+         }
+         
+         a#btn_refresh{
+            display:inline-block;
+            font-size:17px;
+         }
+       
+	   
+	</style>
+</head>
+<body>
+ <div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== header ======================== -->
+             <div th:include="/common/common-header-notype::header"></div>
+        
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">全部攻略</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_newslist">
+	
+	<script type="text/javascript">
+		var currentPage =[[${page}]];
+		var totalPage = [[${totalPage}]];
+	
+		//第一页
+		function firstPage(){
+			if(currentPage == 1){
+				alert("已经是第一页数据");
+				return false;
+			}else{
+			    var formElement = document.getElementById("first");
+			    formElement.href = "/fallhouse/page/1";
+				return true;
+			}
+		}
+	
+	
+		//下一页
+		function nextPage(){
+			if(currentPage == totalPage){
+				alert("已经是最后一页数据");
+				return false;
+			}else{
+			    var formElement = document.getElementById("next");
+			    var nextpage=currentPage+1;
+			    formElement.href = "/fallhouse/page/"+nextpage;
+				return true;
+			}
+		}
+	
+		//上一页
+		function previousPage(){
+			if(currentPage == 1){
+				alert("已经是第一页数据");
+				return false;
+			}else{
+			    var formElement = document.getElementById("pre");
+			    var prepage=currentPage-1;
+			    formElement.href = "/fallhouse/page/"+prepage;
+				return true;
+			}
+		}
+	
+		//尾页
+		function lastPage(){
+			if(currentPage == totalPage){
+				alert("已经是最后一页数据");
+				return false;
+			}else{
+			    var formElement = document.getElementById("last");
+			    formElement.href = "/fallhouse/page/"+totalPage;
+				return true;
+			}
+		}
+	
+	</script>
+		 <table style="border-collapse: collapse">
+						<tr th:each="all:${all}">
+							<td align="center">
+							    <p class="content"> 
+							       <!-- newsinfo.html -->
+							       <!-- <a th:href="@{/fhouseinfo(id=${all.id})}">   -->
+							       <a th:href="@{'/fhouseinfo/id/'+${all.id}}">
+							          <img th:src="@{'/static/images/housemethod/'+${all.photo}}" width="150px" />
+							        </a>
+							    </p>
+							</td>
+							<td>
+							    <p class="content">
+							        <a th:href="@{'/fhouseinfo/id/'+${all.id}}">
+							         <span th:text="${all.title}"></span>
+							        </a>
+							    </p>
+							</td>
+							<td align="right">
+							   <p class="content" th:text="${#dates.format(all.pubtime, 'yyyy-MM-dd hh:mm:ss')}"></p>
+							</td>
+						</tr>
+			</table>
+			<p id="p_nav">共<span th:text="${totalRecord}"></span>条记录,每页<span th:text="${pagesize}"></span>条,共<span th:text="${totalPage}"></span>页,&nbsp;&nbsp;当前第<span th:text="${page}"></span>页&nbsp;&nbsp;
+			<a id="first" href="javascript:void(0);" onclick="firstPage();">首页</a>&nbsp;&nbsp; 
+			<a id="pre" href="javascript:void(0);" onclick="previousPage();">上一页</a>&nbsp;&nbsp;
+			<a id="next" href="javascript:void(0);" onclick="nextPage();">下一页</a>&nbsp;&nbsp;
+			<a id="last" href="javascript:void(0);" onblur="lastPage();">尾页</a>	
+		    </p>
+		    
+    </div>
+     <!-- ================== Footer  ================== -->
+          <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+   <!--JS files-->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+    
+    //刷新验证码
+    function changeImg(){        
+  	   var img = document.getElementById("verityimg");         
+  	   img.src = "/kaptcha?date=" + new Date();    
+    }
+   
+    //点击登陆
+	function login_ajax(){
+		var username=$('#username').val();
+		var pwd=$('#pwd').val();
+	    var verifyCode=$('#verifyCode').val();
+	    if(username!="" && pwd!="" && verifyCode!=""){
+	        $.post("/login",
+		    {"username":username,"password":pwd,"submitCode":verifyCode},
+		    function(data){
+		    	if(data=="200"){
+		    		setTimeout(function(){
+		                   $('#login_btn').css("background-color","red").css('color','white').text('成功登陆');
+		                    alert('成功！'); 
+		                    window.location="/index.html";
+		             },1000); 
+		        }else if(data=="701"){ 
+		             alert('验证码有误！');
+		           
+		        }else if(data=="400"){
+		             alert('该用户不存在！');
+		        }  
+	       });
+	    }else{
+	        alert("不能为空")
+	    }
+	}
+    
+	//点击退出
+	function logout_ajax(){
+	        $.get("/logout",
+		    function(data){
+		           if(data=="0"){
+			             alert('成功！'); 
+			             window.location="/index.html";
+			        }else{ 
+			             alert('失败！');
+			        } 
+	       });
+	}
+	
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+</body>
+</html>

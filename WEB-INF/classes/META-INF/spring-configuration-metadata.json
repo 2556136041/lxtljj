@@ -1,0 +1,97 @@
+{
+  "groups": [
+    {
+      "name": "shownums",
+      "type": "com.lxtljj.config.ShownumsConfig",
+      "sourceType": "com.lxtljj.config.ShownumsConfig"
+    },
+    {
+      "name": "web",
+      "type": "com.lxtljj.config.UploadCommonimgPathConfig",
+      "sourceType": "com.lxtljj.config.UploadCommonimgPathConfig"
+    },
+    {
+      "name": "web",
+      "type": "com.lxtljj.config.UploadNewsimgPathConfig",
+      "sourceType": "com.lxtljj.config.UploadNewsimgPathConfig"
+    },
+    {
+      "name": "web",
+      "type": "com.lxtljj.config.UploadProsimgPathConfig",
+      "sourceType": "com.lxtljj.config.UploadProsimgPathConfig"
+    },
+    {
+      "name": "web",
+      "type": "com.lxtljj.config.UploadHousimgPathConfig",
+      "sourceType": "com.lxtljj.config.UploadHousimgPathConfig"
+    },
+    {
+      "name": "web",
+      "type": "com.lxtljj.config.WxloginConfig",
+      "sourceType": "com.lxtljj.config.WxloginConfig"
+    },
+    {
+      "name": "web",
+      "type": "com.lxtljj.config.UploadBrandstoryimgPathConfig",
+      "sourceType": "com.lxtljj.config.UploadBrandstoryimgPathConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "shownums.newsnums",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lxtljj.config.ShownumsConfig"
+    },
+    {
+      "name": "shownums.pronums",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lxtljj.config.ShownumsConfig"
+    },
+    {
+      "name": "web.myappid",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.WxloginConfig"
+    },
+    {
+      "name": "web.myappsecret",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.WxloginConfig"
+    },
+    {
+      "name": "web.static-accesshousemethod-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadHousimgPathConfig"
+    },
+    {
+      "name": "web.static-accessnews-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadNewsimgPathConfig"
+    },
+    {
+      "name": "web.uploadbrandstory-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadBrandstoryimgPathConfig"
+    },
+    {
+      "name": "web.uploadcommon-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadCommonimgPathConfig"
+    },
+    {
+      "name": "web.uploadhousemethod-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadHousimgPathConfig"
+    },
+    {
+      "name": "web.uploadnews-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadNewsimgPathConfig"
+    },
+    {
+      "name": "web.uploadpros-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lxtljj.config.UploadProsimgPathConfig"
+    }
+  ],
+  "hints": []
+}

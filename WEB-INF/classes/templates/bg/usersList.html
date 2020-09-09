@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用户列表（admin）</title>
+<link rel="stylesheet" type="text/css" th:href="@{/static/css/layoutlist.css}">
+<style>
+
+</style>
+</head>
+
+<script type="text/javascript">
+var currentPage =[[${page}]];
+var totalPage = [[${totalPage}]]
+
+//第一页
+function firstPage(){
+	if(currentPage == 1){
+		alert("已经是第一页数据");
+		return false;
+	}else{
+	    var formElement = document.getElementById("first");
+	    formElement.href = "/allnews?page=1";
+		return true;
+	}
+}
+
+
+//下一页
+function nextPage(){
+	if(currentPage == totalPage){
+		alert("已经是最后一页数据");
+		return false;
+	}else{
+	    var formElement = document.getElementById("next");
+	    var nextpage=currentPage+1;
+	    formElement.href = "/alluser?page="+nextpage;
+		return true;
+	}
+}
+
+//上一页
+function previousPage(){
+	if(currentPage == 1){
+		alert("已经是第一页数据");
+		return false;
+	}else{
+	    var formElement = document.getElementById("pre");
+	    var prepage=currentPage-1;
+	    formElement.href = "/alluser?page="+prepage;
+		return true;
+	}
+}
+
+//尾页
+function lastPage(){
+	if(currentPage == totalPage){
+		alert("已经是最后一页数据");
+		return false;
+	}else{
+	    var formElement = document.getElementById("last");
+	    formElement.href = "/alluser?page="+totalPage;
+		return true;
+	}
+}
+
+</script>
+<body>
+    <p><b>当前位置：</b>用户>>列表</p>
+	<div id="div_main">
+
+		<h2>用户列表</h2>
+
+            <p id="search">
+            <form th:action="@{/searchuserbyname?page=1}" method="post" th:method="post">
+               <input type="text" name="keyword" placeholder="用户关键字" />
+               <input type="submit" value="search" />
+            </form>
+            </p>
+			<table border="1px" cellspacing="0px" cellpadding="10"
+				style="border-collapse: collapse">
+				<thead>
+					<tr height="30">
+						<th width="130">序号</th>
+						<th width="130">用户名</th>
+						<th width="130">性别</th>
+						<th width="190">电话</th>
+						<th width="190">邮箱</th>
+						<th width="190">注册时间</th>
+						<th width="190">操作</th>
+					</tr>
+				</thead>
+						<tr th:each="all:${all}">
+							<td align="left" valign="top" th:text="${all.uid}"></td>
+							<td style="text-align:justify" align="left" valign="top" th:text="${all.name}"></td>
+							<td style="text-align:justify" align="left" valign="top" th:text="${all.sex}"></td>
+							<td style="text-align:justify" align="left" valign="top" th:text="${all.phone}"></td>
+							<td style="text-align:justify" align="left" valign="top" th:text="${all.email}"></td>
+							<td style="text-align:justify" align="left" valign="top" th:text="${#dates.format(all.regtime, 'yyyy-MM-dd hh:mm:ss')}"></td>
+							<!-- 
+							<td><a href="<%=context %>/servlet1/NewsUpdateServlet?id=${news.id }"><b>修改</b></a>&nbsp;|&nbsp;<a href="<%=context %>/servlet1/NewsDelServlet?id=${news.id }"><b>删除</b></a></td>
+							 -->
+							 <td align="center" valign="top"><a th:href="@{/userupdate(id=${all.uid})}"><b>修改</b></a>&nbsp;|&nbsp;<a th:href="@{/isUserDel(id=${all.uid})}"><b>删除</b></a></td>
+						</tr>
+			</table>
+			<br> 共<span th:text="${totalRecord}"></span>条记录,每页<span th:text="${pagesize}"></span>条,共<span th:text="${totalPage}"></span>页,&nbsp;&nbsp;当前第<span th:text="${page}"></span>页&nbsp;&nbsp;
+			<a id="first" href="javascript:void(0);" onclick="firstPage();">首页</a>&nbsp;&nbsp; 
+			<a id="pre" href="javascript:void(0);" onclick="previousPage();">上一页</a>&nbsp;&nbsp;
+			<a id="next" href="javascript:void(0);" onclick="nextPage();">下一页</a>&nbsp;&nbsp;
+			<a id="last" href="javascript:void(0);" onblur="lastPage();">尾页</a>	
+		
+
+	</div>
+</body>
+</html>

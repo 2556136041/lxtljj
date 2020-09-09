@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>龙兴联泰品牌推荐详情</title>
+<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    <style>
+         div#div_newsinfo{
+              width:90%;
+              height:auto;
+              margin:50px auto;
+              color:black;
+         }
+         
+          div#div_newsinfo h1{
+              font-size:32px;
+              width:100%;
+              height:30px;
+              text-align:center;
+              line-height:30px;
+          
+          }
+          
+          div#div_newsinfo #p_nav{
+              font-size:18px;
+              width:100%;
+              height:30px;
+              text-align:center;
+              line-height:30px;
+          
+          }
+          
+          div#div_newsinfo #p_lead{
+              font-size:18px;
+              width:80%;
+              height:auto;
+              margin:30px auto;
+              padding:20px;
+              text-align:justify;
+              text-indent:2em;
+          
+          }
+          
+          #p_img{
+              width:780px;
+              height:auto;
+              margin:30px auto;
+              
+          }
+          
+           div#div_newsinfo #div_con{
+              font-size:16px;
+              width:100%;
+              height:auto;
+              padding:20px;
+              text-align:justify;
+              text-indent:2em;   
+              clear:both;       
+          }
+          
+           div#div_newsinfo #p_page{
+              font-size:20px;
+              width:100%;
+              text-align:left;
+              padding:0px;
+              margin:0px;
+          }
+          
+          div#div_newsinfo #p_page a:hover{
+              color:red;
+          
+          }
+          
+          span#span_cut{
+              display:inline-block;
+              width:100%;
+              height:2px;
+
+          /*    background:gray;  */
+          }
+          
+          p.no_jump,div.div_jump,p.p_jump{
+              display:inline-block;
+          }
+
+          p#p_back a:hover{
+              color:red;
+          }
+          
+          /* login */
+	      input#verifyCode{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100px;
+	        height:40px;
+	        padding-left:15px;
+	     }
+    
+         img#safeCode{
+            vertical-align:middle;
+         }
+         
+         a#btn_refresh{
+            display:inline-block;
+            font-size:17px;
+         }
+	     
+	</style>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+              <div th:include="/common/common-header-notype::header"></div>
+        
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">品牌详情</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_newsinfo">
+         <p id="p_back"><img src="/static/images/common/backhead.png" width="25" height="25" align="top" />&nbsp;<a href="/index.html">回到首页</a></p>
+         <h1 th:text="${title}"></h1>
+         
+         <p id="p_nav">
+                         作者：<span th:text="${author}"></span> &nbsp;&nbsp;时间：<span th:text="${#dates.format(pubtime, 'yyyy-MM-dd hh:mm:ss')}"></span>&nbsp;&nbsp; 浏览：<span th:text="${hits}"></span>
+         </p>
+         <p id="p_lead" th:text="${leader}"></p>
+         
+         <p id="p_img">
+              <img onclick="showBig(this.id)" id="1" th:src="@{'/static/images/brandstory/'+${#strings.substring(photo,0,9)}}"/>
+			  <img onclick="showBig(this.id)" id="2" th:src="@{'/static/images/brandstory/'+${#strings.substring(photo,10,19)}}"/>
+			  <img onclick="showBig(this.id)" id="3" th:src="@{'/static/images/brandstory/'+${#strings.substring(photo,20,29)}}"/>
+			  <img onclick="showBig(this.id)" id="4" th:src="@{'/static/images/brandstory/'+${#strings.substring(photo,30,39)}}"/>
+         </p>
+           <script>
+  	             
+  	             $("#p_img img:first").css({"width":"780px","height":"550px","display":"block"});
+  	             $("#p_img img:gt(0)").css({"float":"left","width":"250px","height":"160px","margin":"20px 5px","border":"1px solid gray"}); 
+  	             flag=false;
+  	             function showBig(id){
+  	                  var url=$("#"+id).attr("src");
+  	                  $("#p_img img:first").css("width","780px").attr("src",url);
+                      $("#"+id).css("border","3px solid red");
+                      flag=true;
+  	             }
+  	       </script>
+         <div id="div_con">
+               <div th:utext="${content}"></div>
+         
+         </div>
+    
+         <div id="p_page">
+          
+                  <span class="span_tit">上一篇:</span>
+                  <p class="no_jump" th:if="${preid == null}">
+                       <span class="span_jump">没有了<span>
+                  
+                  </p>
+                  <div class="div_jump" th:if="${preid != null}">
+	                  <p class="span_jump">
+	                      <a th:href="@{'/fbrandinfo/id/'+${preid}}"><span th:text="${pretitle}"></span></a>   
+	                  </p>
+	              </div>
+                 <span id="span_cut"></span>             
+                 <span class="span_tit">下一篇:</span>
+                 <p class="no_jump" th:if="${afterid == null}">
+                       <span class="span_jump">没有了<span>
+                  
+                  </p>
+                  <div class="div_jump" th:if="${afterid != null}">
+	                  <p class="span_jump">
+	                       <a th:href="@{'/fbrandinfo/id/'+${afterid}}"><span th:text="${aftertitle}"></span></a>   
+	                  </p>
+                  </div>
+           </div>
+     </div>
+       
+     
+      <!-- ================== Footer  ================== -->
+          <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+   <!--JS files-->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+    
+    //刷新验证码
+    function changeImg(){        
+  	   var img = document.getElementById("verityimg");         
+  	   img.src = "/kaptcha?date=" + new Date();    
+    }
+   
+    //点击登陆
+	function login_ajax(){
+		var username=$('#username').val();
+		var pwd=$('#pwd').val();
+	    var verifyCode=$('#verifyCode').val();
+	    if(username!="" && pwd!="" && verifyCode!=""){
+	        $.post("/login",
+		    {"username":username,"password":pwd,"submitCode":verifyCode},
+		    function(data){
+		    	if(data=="200"){
+		    		setTimeout(function(){
+		                   $('#login_btn').css("background-color","red").css('color','white').text('成功登陆');
+		                    alert('成功！'); 
+		                    window.location="/index.html";
+		             },1000); 
+		        }else if(data=="701"){ 
+		             alert('验证码有误！');
+		           
+		        }else if(data=="400"){
+		             alert('该用户不存在！');
+		        }  
+	       });
+	    }else{
+	        alert("不能为空")
+	    }
+	}
+    
+	//点击退出
+	function logout_ajax(){
+	        $.get("/logout",
+		    function(data){
+		           if(data=="0"){
+			             alert('成功！'); 
+			             window.location="/index.html";
+			        }else{ 
+			             alert('失败！');
+			        } 
+	       });
+	}
+	
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+    
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+
+</body>
+</html>

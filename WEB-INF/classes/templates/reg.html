@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>reg user</title>
+<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    <style>
+
+	     div#div_main{
+	        width:90%;
+	        margin:30px auto;
+	       
+	     
+	     }
+	     table{
+	        margin:20px auto;
+	       
+	     }
+	    input.inp1{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100%;
+	        height:50px;
+	        padding-left:10px;
+	        outline:none;
+			border:1px solid black;
+		    outline:medium;
+	        
+	     }
+	     
+	     input[type=checkbox]{
+	         display:inline-block;
+	         width:20px;
+	         height:20px;
+	         vertical-align:text-top; 
+	         margin-top:0;
+	         border:1px solid black;
+	     }
+	     
+	     input.selectbtn{
+	        display:inline-block;
+	        width:20px;
+	        height:20px;
+	        vertical-align:text-top; 
+	        margin-top:0;
+	        border:1px solid black;
+	     }
+	     
+	     #regsubmit{
+	        width:120px;
+	        height:50px;
+	        margin:30px 0px;
+	        background:#ffbb00; 
+	        outline:none;
+			border:none;
+		    outline:medium;
+	     
+	     }
+	     
+	      #regsubmit:hover{
+		     background-color: #FF6347;
+		     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+		     color:white;
+         }
+         
+         p#p_radio,p#p_checkbox{
+             margin-top:20px;
+         
+         }
+	
+	     input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+              -webkit-box-shadow: 0 0 0px 1000px white inset;
+         }
+	</style>
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+
+        <nav class="navbar-fixed">
+
+            <div class="container">
+
+                <!-- ==========  Top navigation ========== -->
+
+                <div class="navigation navigation-top clearfix">
+                    <ul>
+                        <!--add active class for current page-->
+
+                       <!--  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li> -->
+
+                        <!--Currency selector-->
+
+                        <!-- <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> USD $</a>
+                            <ul class="nav-settings-list">
+                                <li>USD $</li>
+                                <li>EUR €</li>
+                                <li>CHF Fr.</li>
+                                <li>GBP £</li>
+                            </ul>
+                        </li> -->
+
+                        <!--Language selector-->
+
+                        <!-- <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>
+                            <ul class="nav-settings-list">
+                                <li>ENG</li>
+                                <li>GER</li>
+                                <li>لعربية</li>
+                                <li>עִבְרִית</li>
+                            </ul>
+                        </li>
+
+                        <li><a href="javascript:void(0)" class="open-login"><i class="icon icon-user"></i></a></li>
+
+                        <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li> 
+                       -->
+                       <li>
+	                         <a href="" class="open-cart"><i class="icon icon-cart"></i> 
+		                          <p th:if="${session.cart!=null}">
+			                        <span th:text="${session.cart.getTotalNum()}"></span>
+			                      </p>
+			                      <p th:if="${session.cart==null}">
+			                        <span>0</span>
+			                      </p>
+	                         </a>
+                        </li>
+                    </ul>
+                </div> <!--/navigation-top-->
+
+                <!-- ==========  Main navigation ========== -->
+
+                <div class="navigation navigation-main">
+
+                    <!-- Setup your logo here-->
+
+                    <a th:href="@{/index.html}" class="logo"><img src="/static/assets/images/logo1.png" alt="" /></a>
+
+                    <!-- Mobile toggle menu -->
+
+                    <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
+
+                    <!-- Convertible menu (mobile/desktop)-->
+
+                    <div class="floating-menu">
+
+                        <!-- Mobile toggle menu trigger-->
+
+                        <div class="close-menu-wrapper">
+                            <span class="close-menu"><i class="icon icon-cross"></i></span>
+                        </div>
+
+                        <ul>
+                            <li><a th:href="@{/index.html}">首页</a></li>
+                             <li><a th:href="@{/fallnews}">新闻中心</a></li>
+							<li><a th:href="@{/fallpros}">产品中心</a></li>
+                            <li><a th:href="@{/promotion}">商场活动</a></li>
+                        </ul>
+                    </div> <!--/floating-menu-->
+                </div> <!--/navigation-main-->
+
+            </div> <!--/container-->
+        </nav>
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">用户注册</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_main">
+            <h3 style="text-align:center;color:red;" th:text="${regresult}"></h3>
+		    <table align="center" width="800" cellpadding="10" cellspacing="10" border="0">
+            <form name="form" th:action="@{/dopostuser}" method="post" th:method="post" onsubmit="return checkForm()">
+		        <tr>
+		          <td class="td_ts">
+		                          用户名
+		          </td>
+		          <td>
+		             <div class="form-group">
+		             <input class="inp1" type="text" id="username" name="name" required="true" onkeydown="switchKey(form.birth)" onfocus="focus_username()" onblur="blur_username()" placeholder="输入用户名">
+		             </div>
+		             <span class="result" id="result_username"></span>
+		          </td>
+		          
+		        </tr> 
+		         <tr>
+		          <td class="td_ts">
+		                          性别
+		          </td>
+		          <td>
+		           <div style="margin-top:15px;" class="filter-content">
+		             <span class="checkbox">
+		                  <input type="radio" name="sex" value="1" id="boy" checked="checked">
+                          <label for="boy">男</label>
+		             </span>    
+		             <span class="checkbox">     
+		                  <input type="radio" name="sex" value="0" id="girl">
+		                  <label for="girl">女</label>
+		             </span> 
+                   </div>
+		          </td>
+		        </tr> 
+		        
+		        <tr>
+		          <td class="td_ts">
+		                          密码
+		          </td>
+		          <td>
+		             <input class="inp1" type="password" id="pwd" name="password" required="true" placeholder="不少于6位数" onkeydown="switchKey(form.repwd)" onfocus="focus_pwd()" onblur="blur_pwd()">
+		              <span class="result" id="result_userpwd"></span>
+		          </td>
+		        </tr> 
+		        <tr>
+		          <td class="td_ts">
+		                          确认密码
+		          </td>
+		          <td>
+		             <input class="inp1" id="repwd" type="password" name="repwd" required="true" placeholder="再次输入密码" onkeydown="switchKey(form.nickname)"  onfocus="focus_repwd()" onblur="blur_repwd()">
+		             <span class="result" id="result_repwd"></span>
+		          </td>
+		        </tr> 
+		        <tr>
+		          <td class="td_ts">
+		                          呢称
+		          </td>
+		          <td>
+		             <input class="inp1" type="text" id="nickname" name="nickname" placeholder="呢称">
+		          </td>
+		        </tr> 
+		        <tr>
+		          <td class="td_ts">
+		                         电话
+		          </td>
+		          <td>
+		             <input class="inp1" type="text" id="tel" name="phone" required="true" placeholder="手机号" onkeydown="switchKey(form.address)" onfocus="focus_Mobile()" onblur="blur_Mobile()">
+		             <span class="result" id="result_Mobile"></span>
+		          </td>
+		        </tr> 
+		         <tr>
+		          <td class="td_ts">
+		                          地址
+		          </td>
+		          <td>
+		             <input class="inp1" type="text" id="address" name="address" required="true" placeholder="地址" onkeydown="switchKey(form.email)" onfocus="focus_address()" onblur="blur_address()">
+		             <span class="result" id="result_address"></span>
+		          </td>
+		        </tr>
+		        <tr>
+		          <td class="td_ts">
+		                          邮箱
+		          </td>
+		          <td>
+		             <input class="inp1" type="text" id="email" name="email" required="true" placeholder="邮箱" onkeydown="switchKey(form.inters)" onfocus="focus_email()" onblur="blur_email()">
+		             <span class="result" id="result_email"></span>
+		          </td>
+		        </tr> 
+		
+		       
+		        <tr>
+		          <td colspan="2" align="center">
+		             <input id="regsubmit" type="submit" value="submit">    
+		          </td>
+		        </tr> 
+		    </form>
+		    </table>
+		    <script>
+		        $(".td_ts").css({"text-align":"right","padding-right":"15px","font-weight":"600"});
+		     
+		    </script>
+    </div>
+     <!-- ================== Footer  ================== -->
+
+        <div th:include="/common/common-footer::footer"></div>
+         
+
+    </div> <!--/wrapper-->
+     <!--JS files-->
+    <script type="text/javascript">
+
+    /*<![CDATA[*/
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+</body>
+</html>

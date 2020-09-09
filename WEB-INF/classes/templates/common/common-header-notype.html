@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>header</title>
+</head>
+<body>
+<!--/* ================== header  ================== */-->
+<div th:fragment="header">
+         <nav class="navbar-fixed">
+
+            <div class="container">
+
+                <!--/* ==========  Top navigation ========== */-->
+
+                <div class="navigation navigation-top clearfix">
+                    <ul>
+                      
+                       <li style="color:rgb(255,187,0);" th:if="${indexview!=null || counter!=null || loginips!=null}">你是本站第<span th:text="${loginips}"></span>位访客,浏览量<span th:text="${indexview}"></span><!--/*,当前在线<span th:text="${counter}"></span>人 */--></li>&nbsp;
+                       <li style="color:rgb(255,187,0);" th:if="${proview!=null}">浏览量<span th:text="${proview}"></span></li>&nbsp;
+                       <li style="color:rgb(255,187,0);" th:if="${promotionview!=null}">浏览量<span th:text="${promotionview}"></span></li>&nbsp;
+                       <li style="color:rgb(255,187,0);" th:if="${newsview!=null}">浏览量<span th:text="${newsview}"></span></li>&nbsp;
+                       <li style="color:rgb(255,187,0);" th:if="${housemethodview!=null}">浏览量<span th:text="${housemethodview}"></span></li>&nbsp;
+                       <li style="color:rgb(255,187,0);" th:if="${brandview!=null}">浏览量<span th:text="${brandview}"></span></li>&nbsp;
+                       
+                       <!--/* add active class for current page */-->
+
+                       <!--/*  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li> */-->
+
+                        <!--/* Currency selector */-->
+
+                        <!--/*  <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> USD $</a>
+                            <ul class="nav-settings-list">
+                                <li>USD $</li>
+                                <li>EUR €</li>
+                                <li>CHF Fr.</li>
+                                <li>GBP £</li>
+                            </ul>
+                        </li> */-->
+
+                        <!--/* Language selector */-->
+
+                        <!--/*  <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>
+                            <ul class="nav-settings-list">
+                                <li>ENG</li>
+                                <li>GER</li>
+                                <li>لعربية</li>
+                                <li>עִבְרִית</li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li> 
+                       */-->
+                       <li><a href="javascript:void(0)" class="open-login"><i class="icon icon-user"></i></a></li>
+                       <li>
+                        <a th:href="@{/showcart}" class="open-cart"><i class="icon icon-cart"></i> 
+	                          <p th:if="${session.cart!=null}">
+		                        <span th:text="${session.cart.getTotalNum()}"></span>
+		                      </p>
+		                      <p th:if="${session.cart==null}">
+		                        <span>0</span>
+		                      </p>
+                        </a>
+                        </li>
+                    </ul>
+                </div> <!--/* /navigation-top */-->
+
+                <!--/*  ==========  Main navigation ========== */-->
+
+                <div class="navigation navigation-main">
+
+                    <!--/*  Setup your logo here */-->
+
+                    <a th:href="@{/index.html}" class="logo"><img th:src="@{/static/assets/images/logo1.png}" alt="" /></a>
+
+                    <!--/*  Mobile toggle menu */-->
+
+                    <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
+
+                    <!--/* Convertible menu (mobile/desktop) */-->
+
+                    <div class="floating-menu">
+
+                        <!--/*  Mobile toggle menu trigger */-->
+
+                        <div class="close-menu-wrapper">
+                            <span class="close-menu"><i class="icon icon-cross"></i></span>
+                        </div>
+
+                        <ul>
+                            <li><a th:href="@{/index.html}">首页</a></li>
+                             <li><a th:href="@{/fallnews/page/1}">新闻中心</a></li>
+							<li><a th:href="@{/fallpros/page/1}">产品中心</a></li>
+                            <li><a th:href="@{/promotion}">商场活动</a></li>
+                        </ul>
+                    </div> <!--/* /floating-menu */-->
+                </div> <!--/* /navigation-main */-->
+
+                <!--/*  ==========  Login wrapper ========== */-->
+               <div class="login-wrapper">     
+		          <div th:if="${session.user==null}">   
+		            
+                        <div class="h4">用户登陆</div>
+                          <p style="width:30px;height:30px;position:absolute;right:20px;top:15px;"> 
+                               <a href="#">
+                                  <img th:src="'/static/images/common/icon64_wx_logo.png'" style="width:30px;" />
+                               </a>
+                          </p>
+                        <div class="form-group">
+                            <input type="text" id="username" class="form-control" placeholder="用户名">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="pwd" class="form-control" value="" placeholder="密码">
+                        </div>
+                         <div class="form-group">
+                             <input type="text" id="verifyCode" class="form-control"  size="6">
+           <!--/*              <img id="verityimg" src="/getImage" />	        
+                             <a href="javascript:void(0)" οnclick="javascript:changeImg()" style="color:white;"><label style="color:black;">看不清？</label></a>
+	                         <script type="text/javascript">    
+	                              function changeImg(){        
+	                            	   var img = document.getElementById("verityimg");         
+	                            	   img.src = "/getImage?date=" + new Date();    
+	                               }
+	                         </script> 
+	       */-->               
+	                         <img id="verityimg" style="width:120px;height:40px;" src="/kaptcha" />
+	                         <a href="#" style="color:white;" onclick="changeImg()"><label for="verityimg" style="color:black;">看不清？</label></a>
+	                   
+	                         
+                         
+                         <!--/* <input type="text" id="verifyCode" class="form-control"  size="6">
+    <img alt="验证码" id="safeCode" src="" />
+    <a id="btn_refresh" href="javascript:reloadImag();">刷新</a>
+                         */-->   
+                        </div>
+                        <div class="form-group">
+                            <a href="/getbackpwd" class="open-popup">忘记密码</a>
+                            <a href="/reg" class="open-popup">注册</a>
+                        </div>
+                          <button type="submit" id="login_btn" onclick="login_ajax()" class="btn btn-block btn-main">登陆</button>
+		              
+             </div> <!--/* 判断 */-->
+             <div th:if="${session.user!=null}">
+                  <div class="form-group">
+		                    <div th:if="${session.user=='admin' && session.pwd=='wxl13088829771'}">
+		                           <p>
+		                               <span style="color:red;" th:text="${session.user}"></span>
+		                                                                已登陆&nbsp;&nbsp;
+		                                    <a style="color:blue;font-size:16px;" href="/bg/index">后台管理</a>&nbsp;&nbsp;
+		                               <a style="color:blue;font-size:16px;" href="javascript:void(0)" onclick="logout_ajax()" class="open-popup">注销</a>
+		                           </p>
+		                    </div>
+		                    <div th:if="${session.user!='admin' && session.pwd!='wxl13088829771'}">
+                                   <p>
+                                       <span style="color:red;" th:text="${session.user}"></span>
+                                                                              已登陆&nbsp;&nbsp;
+			                               <a style="color:blue;font-size:16px;" th:href="@{/myspace}">个人空间</a>&nbsp;&nbsp;
+		                               <a style="color:blue;font-size:16px;" href="javascript:void(0)" onclick="logout_ajax()" class="open-popup">注销</a>
+		                           </p>
+		                    </div>
+		          </div>
+                    
+             
+             </div>  <!--/* 判断 */-->
+               
+            </div> <!--/* /container */-->
+        </nav>
+</div>
+ 
+</body>
+</html>

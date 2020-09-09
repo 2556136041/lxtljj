@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>footer</title>
+
+<style>
+.col-sm-6{
+     color:white;
+}
+
+</style>
+</head>
+<body>
+<!-- ================== Footer  ================== -->
+    <div th:fragment="footer">
+        <footer>
+            <div class="container">
+
+                <!--footer showroom-->
+                <div class="footer-showroom">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h2>商场接待时间</h2>
+                            <p>周一至周五：9：00-20:00</p>
+                            <p>周六至周日：9：00-20:00</p>
+                        </div>
+                        <div class="col-sm-4 text-center">
+
+                            <a target="_blank" href="https://map.baidu.com/search/%E9%BE%99%E5%85%B4%E8%81%94%E6%B3%B0%E5%AE%B6%E5%85%B7/@12718292.16,2581569.83,16z?querytype=s&c=340&wd=%E9%BE%99%E5%85%B4%E8%81%94%E6%B3%B0%E5%AE%B6%E5%85%B7&da_src=shareurl&on_gel=1&l=16&gr=1&b=(12715222.16,2580087.83;12721362.16,2583051.83)&pl_data_type=shopping&pl_price_section=0,%2B&pl_sort_rule=0&pl_discount2_section=0,%2B&pl_groupon_section=0,%2B&pl_cater_book_pc_section=0,%2B&pl_hotel_book_pc_section=0,%2B&pl_ticket_book_flag_section=0,%2B&pl_movie_book_section=0,%2B&pl_business_type=shopping&pn=0&device_ratio=2" class="btn btn-clean"><span class="icon icon-map-marker"></span> 获得我们的地址</a>
+
+                            <div class="call-us h4"><span class="icon icon-phone-handset"></span> 0755-89980035</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--footer links-->
+                <div class="footer-links">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-2">
+                            <h5>底部导航</h5>
+                            <ul>
+                                <li><a th:href="@{/fallpros/page/1}">产品</a></li>
+                                <li><a th:href="@{/promotion}">活动</a></li>
+                                <li><a th:href="@{/fallhouse/page/1}">攻略</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                            <h5>互动</h5>
+                            <ul>
+                                <li><a th:href="@{javascript:void(0);}" onclick="alert('还没开通')">设计</a></li>
+                                <li><a th:href="@{javascript:void(0);}" onclick="alert('还没开通')">专题</a></li>
+                                <li><a th:href="@{javascript:void(0);}" onclick="alert('还没开通')">留言</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                            <h5>关于我们</h5>
+                            <ul>
+                                <li><a th:href="@{/about.html}">简介</a></li>
+                                <li><a th:href="@{/fallnews/page/1}">新闻</a></li>
+                                <li><a href="javascript:void(0)" onclick="alert('请拨打0755-89980035')">联系</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <h5>诚邀订阅</h5>
+                            <p><i>注册您的电子邮件以获取我们每月的活动资讯</i></p>
+                            <div class="form-group form-newsletter">
+                                <input id="email" class="form-control" type="text" name="email" value="" placeholder="常用邮箱" />
+                                <input id="submit" type="submit" class="btn btn-clean btn-sm" value="提交" onclick="submit_ajax()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--footer social-->
+
+                <div class="footer-social">
+                    <div class="row">
+                        <div class="col-sm-12">
+                             <span style="color:white;">Copyright © 2019 龙兴联泰国际家具版权所有 <a style="color:rgb(255,255,255)" href="http://www.beian.miit.gov.cn/">粤ICP备19127283号</a><span>
+                        </div>
+                        <!-- <div class="col-sm-6 links">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的购物车</title>
+<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    
+    <!-- cart  -->
+    <link type="text/css" rel="stylesheet" th:href="@{/static/css/cart.css}" />
+</head>
+<body>
+<div id="cover">
+     
+     
+</div>
+<div id="div_head">
+       <p id="p_mycartphoto"><img src="/static/images/common/gouwuche.png"></p>
+	 <!--   <h1>我的购物车</h1>  -->
+	   <p id="p_jump">
+	       <a th:href="@{/index.html}">首页</a> >> <a th:href="@{/fallpros}">继续购物</a>
+       </p>
+</div> 
+<p id="p_cut"></p>
+<div id="shopping">
+	<form action="javascript:void(0)" method="post">		
+		<table id="tab1">
+			<tr th:if="${#sets.size(pro) eq 0}" th:text="还没有任何订单！" style="width:100%;text-align:center;font-size:20px;">
+				<th>图片</th>
+				<th>名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>金额</th>
+				<th>操作</th>
+			</tr>
+				<!-- 循环的开始 -->
+	
+			<tr th:if="${cart!=null}" name="products" id="product_id_1" th:each="pro:${pro}">
+				<td class="thumb" width="150px"><img th:src="@{'/static/images/pros/'+${pro.photo}}" />
+				</td>
+				<td class="number" >
+				    <a th:href="@{/fproinfo(id=${pro.id})}" th:text="${pro.proname}">
+					</a>
+				</td>
+				<td class="number" th:text="${pro.presentprice}"></td>
+				<td class="number" th:text="${goods.get(pro)}">
+				</td>     
+				<td class="price" id="price_id_1">
+					<span th:text="${pro.presentprice*goods.get(pro)}"></span>
+					<input type="hidden" value="" />
+				</td>                   
+                <td class="delete">
+				   <a th:href="@{/delcart(id=${pro.id})}" onclick="delcfm();">删除</a>					                  
+				</td>
+			</tr>
+
+				<!--循环的结束-->
+				
+			</table>
+			<div th:if="cart!=null">
+				<div class="total">共有<span id="total" th:text="${cart?.totalNum}"></span>件商品，总计：￥<span th:text="${cart?.totalPrice}"></span></div>
+	            <input type="hidden" name="totalprice" th:value="${cart?.totalPrice}">
+            </div>
+            <p class="p_nav">物流信息</p>
+			<ul id="addr" th:if="${useraddrs!=null}">
+			
+				      <li th:each="addr:${useraddrs}">
+				         <div id="addr_box">
+					          <p id="addr_left">
+								   <input th:if="${addr.isdefault eq 1}" name="addrid" th:value="${addr.sid}" type="radio" checked />
+								   <input th:if="${addr.isdefault eq 0}" name="addrid" th:value="${addr.sid}" type="radio" />
+								   <span th:text="${addr.sname}"></span>&nbsp;<span th:text="${addr.saddr}"></span>&nbsp;<span th:text="${addr.stel}"></span>&nbsp;&nbsp;
+							 </p>
+							 <p id="addr_right">
+					            <a th:href="@{addrupdate(id=${addr.sid})}"><img src="/static/images/common/bianjidizhi.png" /></a>
+					            &nbsp;
+					            
+					            
+					            <a th:href="@{/deladdr(id=${addr.sid})}" onclick="deladdr()"><img src="/static/images/common/shanchu.png" /></a>
+					         </p>
+					     </div>
+				      </li>
+				    <p>继续添加<a id="addbtn" href="javascript:void(0)">添加+</a></p>
+				    <div id="addform">
+				        <span id="closer"><a id="closeform" href="javascript:void(0)">X</a></span>
+				        <input type="text" id="username" name="username" placeholder="姓名" />
+				        <input type="text" id="myaddr" name="myaddr" placeholder="地址" />
+				        <input type="text" id="tel" name="tel" placeholder="手机号" />
+				        <input type="submit" value="提交" onclick="submit_addr()" />
+				    </div>
+				   <!-- 
+			        <p th:if="${useraddrs==null}">还没有任何送货信息，请添加<a id="addbtn" href="javascript:void(0)">添加+</a></p>
+			        <div id="addform">
+			            <span id="closer"><a id="closeform" href="javascript:void(0)">X</a></span>
+			            <input type="text" id="username" name="username" placeholder="姓名" />
+			            <input type="text" id="myaddr" name="myaddr" placeholder="地址" />
+			            <input type="text" id="tel" name="tel" placeholder="手机号" />
+			            <input type="submit" value="提交" onclick="submit_addr()" />
+			        </div>
+			       --> 
+		    </ul>
+		    <p class="p_nav">支付方式</p>
+
+     <div class="amount">
+     <p>
+     <!--   <a href="javascript:void(0)" class="paybtn"><img src="images/common/zfb.jpg" /></a>
+          <a href="javascript:void(0)" class="paybtn"><img src="images/common/wx.jpg" /></a>
+     -->
+          <a class="" href="javascript:void(0)"><img src="/static/images/common/zfb.jpg" /></a>
+          <a class="" href="javascript:void(0)"><img src="/static/images/common/wx.jpg" /></a>
+     <div id="paymodal">
+           <a href="javascript:void(0)" id="pay_closer">X</a>
+
+           <span id="payamount">￥<i th:if="${cart!=null}" th:text="${cart?.totalPrice}"></i>元</span>
+           <p id="btn-group">
+	           <input type="text" id="money" plackholder="输入金额" />&nbsp;
+	           <input id="submitbtn" type="button" value="支付" onclick="pay_ajax()" />
+           </p>
+     </div>
+        <input id="orderbtn" th:if="${cart!=null}" onclick="javascript:alert('目前还没有开通网上支付功能！')" type="submit" th:value="'提交订单('+${cart?.totalPrice}+')'" />
+    </div>
+</div>
+    </form>
+     <!-- ================== Footer  ================== -->
+       <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+    
+    
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script language="javascript">
+    /*<![CDATA[*/     
+       $(document).ready(function(){
+	    
+	        $("#addbtn").click(function(){
+	             $("#addform").css("display","block");
+	        });
+	        $("#closeform").click(function(){
+	             $("#addform").css("display","none");
+	        });
+	        $(".paybtn").click(function(){
+	        	 $("#cover").css("display","block");
+	        	 $("#paymodal").css("display","block");
+	        });
+	        $("#pay_closer").click(function(){
+	        	 $("#cover").css("display","none");
+	        	 $("#paymodal").css("display","none");
+	        });
+	    });
+	    
+	    function delcfm() {
+	        if (!confirm("确认删除！")) {
+	            window.event.returnValue = false;
+	        }
+	    }
+	    
+	    function deladdr() {
+	        if (!confirm("确认删除！")) {
+	            window.event.returnValue = false;
+	        }
+	    }
+	   
+	   //ajax 删除送货地址
+	   <!-- 
+		function deladdr(id){
+
+		    $.get("/deladdr",
+			    {"id":id},
+			    function(data){
+			           if(data=="1"){
+				              setTimeout(function(){
+				                    alert('成功！'); 
+				                    window.location.assign("/showcart");
+						            window.location.reload();
+				             },1000);
+				        }else{
+				             alert('失败');
+				        }  
+		       });
+
+		}
+	   -->
+		//ajax 提交送货地址ַ
+		function submit_addr(){
+		    var username=$('#username').val();
+		    var myaddr=$('#myaddr').val();
+		    var tel=$('#tel').val();
+		    if(username=="" && addr=="" && tel==""){
+		         alert("不能为空");
+	             $('#username').focus();
+	             return false;
+		       }else{
+		             $.post("/submitUserAddr",
+					    {"username":username,"myaddr":myaddr,"tel":tel,"uid":[[${uid}]]},
+					    function(data){
+					           if(data=="1"){
+						              alert('提交成功'); 
+						              window.location.assign("/showcart");
+						              window.location.reload();
+						        }else if(data=="0"){
+						              alert('提交失败'); 
+						        }
+				        });
+		       }
+		}
+		
+		//点击提交邮箱地址
+		function submit_ajax(){
+		    var email=$('#email').val();
+		    if(email!=""){
+		       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+		       if(!reg.test(email)){
+		             alert("邮箱不合法");
+		             $('#email').val('');
+		             return false;
+		       }else{
+		             $.post("/sendemail",
+					    {"email":email},
+					    function(data){
+					           if(data=="1"){
+						              alert('提交成功！'); 
+						              $('#email').val('');
+						        }else if(data=="3"){
+						              alert('不要重复提交或者有重名邮箱！'); 
+						              $('#email').val('');
+						        }else{
+						        	  alert('提交失败！'); 
+						              $('#email').val('');
+						        }
+				        });
+		       }
+				        
+		    }else{
+		        alert("不能为空");
+		        $("#email").focus();
+		    }
+		}
+		
+		//ajax 删除送货地址ַ
+		function deladdr(id){
+		    //alert(id);
+		    $.get("<%=path %>/servlet1/ShipAddrDelServlet",
+			    {"id":id},
+			    function(data){
+			           if(data=="1"){
+				              alert('成功删除'); 
+				              window.location.assign("/showcart");
+				              
+				        }else if(data=="0"){
+				              alert('删除失败'); 
+				        }
+			});
+		
+		}	
+		
+		//ajax 支付
+			function pay_ajax(){
+			    var money=$('#money').val();
+			    var checkid=$('input:radio:checked').val();
+			    if(money!=""){
+			       //小数点保留两位小数点
+			       var reg=/^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
+			       if(!reg.test(money)){
+			             alert("输入不合法或者购物车里没有商品！");
+			             $('#money').val('');
+			             return false;
+			       }else{
+			             $.post("/SubmitMoney",
+						    {"money":money,"checkid":checkid},
+						    function(data){
+						           if(data=="1"){
+							              alert('֧成功支付'); 
+							              //$('#money').val('');
+							              window.location.assign("/index.html");
+							        }else if(data=="0"){
+							              alert('֧支付失败'); 
+							              $('#email').val('');
+							        }else if(data=="2"){
+							              alert('֧地址未选择'); 
+							              window.location.assign("/showcart");
+							        
+							        }
+					        });
+			       }
+					        
+			    }else{
+			        alert("不能为空");
+			        $("#money").focus();
+			    }
+			}
+	/*]]>*/  	  
+    </script>
+   
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    
+    
+</body>
+</html>

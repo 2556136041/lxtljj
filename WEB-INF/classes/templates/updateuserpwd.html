@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>update user pwd</title>
+<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+   <style>
+
+	     div#div_main{
+	        width:90%;
+	        margin:30px auto;
+	       
+	     
+	     }
+	     table{
+	        margin:20px auto;
+	       
+	     }
+	  
+	     td.td_ts{
+	        width:200px;
+	        text-align:right;
+	     }
+	  
+	     input.inp1{
+	        height:50px;
+	        width:450px;
+	        padding-left:10px;
+	        
+	     }
+	     td{
+	       padding:20px  0px;
+	     }
+	     
+	     input[type=submit],input[type=button]{
+	        height:50px;
+	        width:200px;
+	        
+	     }
+	</style>
+
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+
+        <nav class="navbar-fixed">
+
+            <div class="container">
+
+                <!-- ==========  Top navigation ========== -->
+
+                <div class="navigation navigation-top clearfix">
+                    <ul>
+                        <!--add active class for current page-->
+
+                       <!--  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li> -->
+
+                        <!--Currency selector-->
+
+                        <!-- <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> USD $</a>
+                            <ul class="nav-settings-list">
+                                <li>USD $</li>
+                                <li>EUR €</li>
+                                <li>CHF Fr.</li>
+                                <li>GBP £</li>
+                            </ul>
+                        </li> -->
+
+                        <!--Language selector-->
+
+                        <!-- <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>
+                            <ul class="nav-settings-list">
+                                <li>ENG</li>
+                                <li>GER</li>
+                                <li>لعربية</li>
+                                <li>עִבְרִית</li>
+                            </ul>
+                        </li>
+
+                        <li><a href="javascript:void(0)" class="open-login"><i class="icon icon-user"></i></a></li>
+
+                        <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li> 
+                       -->
+                       <li>
+                           <a href="" class="open-cart"><i class="icon icon-cart"></i> 
+		                          <p th:if="${session.cart!=null}">
+			                        <span th:text="${session.cart.getTotalNum()}"></span>
+			                      </p>
+			                      <p th:if="${session.cart==null}">
+			                        <span>0</span>
+			                      </p>
+	                       </a>
+                        </li>
+                    </ul>
+                </div> <!--/navigation-top-->
+
+                <!-- ==========  Main navigation ========== -->
+
+                <div class="navigation navigation-main">
+
+                    <!-- Setup your logo here-->
+
+                    <a href="index.html" class="logo"><img src="/static/assets/images/logo1.png" alt="" /></a>
+
+                    <!-- Mobile toggle menu -->
+
+                    <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
+
+                    <!-- Convertible menu (mobile/desktop)-->
+
+                    <div class="floating-menu">
+
+                        <!-- Mobile toggle menu trigger-->
+
+                        <div class="close-menu-wrapper">
+                            <span class="close-menu"><i class="icon icon-cross"></i></span>
+                        </div>
+
+                        <ul>
+                            <li><a href="/index">首页</a></li>
+                             <li><a href="/allnews">新闻中心</a></li>
+							<li><a href="">产品中心</a></li>
+                            <li><a href="">商场活动</a></li>
+                        </ul>
+                    </div> <!--/floating-menu-->
+                </div> <!--/navigation-main-->
+
+            </div> <!--/container-->
+        </nav>
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">修改密码</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_main">
+		    <table align="center" width="600" cellpadding="10" border="0">
+		        <tr>
+		          <td>
+		                          密码
+		          </td>
+		          <td>
+		             <input class="inp1" type="password" id="pwd" required="true" >
+		          </td>
+		        </tr>
+		        <tr>
+		          <td>
+		                          重复密码
+		          </td>
+		          <td>
+		             <input class="inp1" type="password" id="repwd" required="true" >
+		          </td>
+		        </tr>
+                  <td colspan="2" align="center">
+		             <input type="hidden" id="uid" th:value="${uid}">
+		             <input type="submit" id="button" value="修改" onclick="update_ajax()">    
+		       
+		          </td>
+		        </tr> 
+		    </table>
+
+    </div>
+     <!-- ================== Footer  ================== -->
+
+         <div th:include="/common/common-footer::footer"></div>
+         
+
+    </div> <!--/wrapper-->
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    
+    <script type="text/javascript">
+
+    /*<![CDATA[*/
+	       function update_ajax(){
+		       var pwd=$('#pwd').val();
+		       var repwd=$('#repwd').val();
+		       var uid=$('#uid').val();
+		       
+		       if(pwd==repwd){
+		                 $.post("/UpdateUserpwd",
+						    {"pwd":pwd,"uid":uid},
+						    function(data){
+						           if(data=="1"){
+							              alert('修改成功！'); 
+							              window.location.href="/index";
+							        }else if(data=="0"){
+							              alert('修改失败！'); 
+							              windwo.location.href="/getbackpwd";
+							        }
+					        });
+		       
+		       }else{
+		           alert("两次输入的密码不一致！")
+		       }
+		 
+		 }
+    	
+    	
+	/*]]>*/      
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>isUserDel</title>
+<style>
+       *{
+          font-size:23px;
+       }
+       a{
+           text-decoration:none;
+           color:0099CC;
+           padding:1px 10px;
+           
+       }
+       a:hover{
+           background:red;
+           color:white;
+       }
+       p{
+           display:inline-block;
+       }
+   
+  </style>
+</head>
+<body>
+   <p>你删除的用户编号为<span th:text="${id}"></span></p>
+  <a th:href="@{/deluser(id=${id})}">点击确定</a>
+  &nbsp;
+  <a href="javascript:void(0)" onclick="goBack()">返回</a>
+<script>
+    function goBack()
+    {
+        window.history.back()
+    }
+</script>
+</body>
+</html>

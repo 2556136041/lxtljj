@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    <style>
+
+	     div#div_main{
+	        width:90%;
+	        margin:30px auto;
+	       
+	     
+	     }
+	     table{
+	        margin:20px auto;
+	       
+	     }
+	  
+	     td.td_ts{
+	        width:200px;
+	        text-align:right;
+	        padding-right:8px;
+	     }
+	  
+	     input.inp1{
+	        height:50px;
+	        width:450px;
+	        padding-left:10px;
+	        
+	     }
+	     td{
+	       padding:20px  0px;
+	     }
+	     
+	     input[type=submit]{
+	        height:50px;
+	        width:200px;
+	        
+	     }
+	</style>
+</head>
+<body>
+ <div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+
+        <nav class="navbar-fixed">
+
+            <div class="container">
+
+                <!-- ==========  Top navigation ========== -->
+
+                <div class="navigation navigation-top clearfix">
+                    <ul>
+                        <!--add active class for current page-->
+
+                       <!--  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li> -->
+
+                        <!--Currency selector-->
+
+                        <!-- <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> USD $</a>
+                            <ul class="nav-settings-list">
+                                <li>USD $</li>
+                                <li>EUR €</li>
+                                <li>CHF Fr.</li>
+                                <li>GBP £</li>
+                            </ul>
+                        </li> -->
+
+                        <!--Language selector-->
+
+                        <!-- <li class="nav-settings">
+                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>
+                            <ul class="nav-settings-list">
+                                <li>ENG</li>
+                                <li>GER</li>
+                                <li>لعربية</li>
+                                <li>עִבְרִית</li>
+                            </ul>
+                        </li>
+
+                        <li><a href="javascript:void(0)" class="open-login"><i class="icon icon-user"></i></a></li>
+
+                        <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li> 
+                       -->
+                       <li>
+                         <a href="" class="open-cart"><i class="icon icon-cart"></i> 
+		                          <p th:if="${session.cart!=null}">
+			                        <span th:text="${session.cart.getTotalNum()}"></span>
+			                      </p>
+			                      <p th:if="${session.cart==null}">
+			                        <span>0</span>
+			                      </p>
+	                         </a>
+                        </li>
+                    </ul>
+                </div> <!--/navigation-top-->
+
+                <!-- ==========  Main navigation ========== -->
+
+                <div class="navigation navigation-main">
+
+                    <!-- Setup your logo here-->
+
+                    <a href="index.html" class="logo"><img src="/static/assets/images/logo1.png" alt="" /></a>
+
+                    <!-- Mobile toggle menu -->
+
+                    <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
+
+                    <!-- Convertible menu (mobile/desktop)-->
+
+                    <div class="floating-menu">
+
+                        <!-- Mobile toggle menu trigger-->
+
+                        <div class="close-menu-wrapper">
+                            <span class="close-menu"><i class="icon icon-cross"></i></span>
+                        </div>
+
+                        <ul>
+                            <li><a href="/index">首页</a></li>
+                             <li><a href="/allnews">新闻中心</a></li>
+							<li><a href="">产品中心</a></li>
+                            <li><a href="">商场活动</a></li>
+                        </ul>
+                    </div> <!--/floating-menu-->
+                </div> <!--/navigation-main-->
+
+            </div> <!--/container-->
+        </nav>
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">取回用户密码</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_main">
+             <h3 th:text="${res}"></h3>
+		    <table align="center" width="800" cellpadding="10" cellspacing="10" border="0">
+		    <form id="form" name="form" action="/submitTelAndlyzm" method="post" onsubmit="return chkservice()">
+
+		          <td class="td_ts">
+		                          手机号           
+		          </td>
+		          <td>
+		                <input class="inp1" type="text" name="phone" id="phone" placeholder="输入11位手机号">
+		                <input type="button" value="发送验证码" id="sendbtn">
+
+		          </td>
+		          
+		        </tr> 
+		        <tr>
+		          <td class="td_ts">
+		                         验证码
+		          </td>
+		          <td>
+		             <input class="inp1" type="text" id="verify" name="verify" required="true" />
+		          </td>
+		        </tr>   
+		        
+		        <tr>
+		          <td colspan="2" align="center">
+		              <input type="submit" id="submit" value="提交" />    
+		          </td>
+		        </tr> 
+		    </form>
+		    </table>
+
+    </div>
+     <!-- ================== Footer  ================== -->
+
+         <div th:include="/common/common-footer::footer"></div>
+         
+
+    </div> <!--/wrapper-->
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    
+    <script type="text/javascript">
+
+    /*<![CDATA[*/
+	
+    	//验证码不能为空
+         function chkservice(){
+              if($("#verify").val()==""){
+                     alert("不能为空");
+                     return false;
+              
+              }else{
+                     return true;
+              }
+         }
+		 $(function(){
+
+	            var phone;
+	            //向指定手机发送验证码
+	            $("#sendbtn").click(function(){
+	                 phone=$("#phone").val();
+	                 var len=phone.length;
+	                 var num=Math.floor(Math.random()*8999+1000);
+	                 //alert(num);
+	                  if(phone!==""){
+	                          if(len=="11"){
+	                                 $.get({
+							            //请求方式
+							            //type : "POST",
+							            //请求的媒体类型
+							            //contentType: "application/json;charset=UTF-8",
+							            //请求地址
+							            url : "https://v.juhe.cn/sms/send",
+							            //数据，json字符串
+							            data : {
+							                mobile:phone,
+	                                        tpl_id:"105908",
+	                                        tpl_value:encodeURI("#code#=")+num,
+	                                        key:"e02ff088d77893adeb3e26f0e7070c2c"
+							            
+							            },
+							            dataType:"jsonp",
+							            //请求成功
+							            success : function(result) {
+							                    console.log(result);
+							                    $.get("/SaveUserTelyzm",
+													    {"telyzm":num},
+													    function(data){
+												           if(data=="1"){
+													               console.log("成功");
+													               var second = 300;
+																	var timer = null;
+																	timer = setInterval(function(){
+																		second -= 1;
+																		if(second >0 ){
+																			$('#sendbtn').attr("value",second+"秒后重试");
+																		}else{
+																			clearInterval(timer);
+																			$('#sendbtn').attr("value","发送验证码");
+																			//$('#J_getCode').show();
+																			//$('#J_resetCode').hide();
+																		}
+																	},1000);
+													        }else {
+													              console.log("失败");
+													        }  
+											  });
+	
+							            }
+							        });
+				        
+	                          }else{
+	                               alert("位数不正确!");
+	                               $("#phone").val("");
+	                               $("#phone").focus();
+	                          
+	                          }
+	                  
+	                  }else{
+	                      alert("不能为空!");
+	                      $("#phone").focus();
+	                  
+	                  }
+	                  
+	              });
+	                  
+	      });
+    	
+	/*]]>*/      
+    </script>
+
+</body>
+</html>

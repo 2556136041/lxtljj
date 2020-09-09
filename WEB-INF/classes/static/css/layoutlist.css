@@ -1,0 +1,71 @@
+@CHARSET "UTF-8";
+
+*{
+	
+	font-size:16px;
+	font-family:"Microsoft YaHei";
+}
+a{
+   text-decoration:none;
+   color:black;
+  }
+a:hover{
+    color:red;
+  }
+
+div#div_main{
+	margin-top:80px;
+	width:1000px;
+	height:auto;
+
+}
+div#div_search{
+	width:100%;
+	margin:15px auto;
+	vertical-align: middle;
+}
+h2{
+	width:100%;
+	text-align:center;
+	font-size:30px;
+}
+
+#add{
+	width:100%;
+	height:auto;
+}
+table{
+	width:100%;
+	height:auto;
+}
+
+table tr td{
+	text-align:center;
+}
+
+input[type=submit]{
+	display:inline-block;
+	width:80px;
+	height:32px;
+}
+
+input[type=text]{
+	display:inline-block;
+	width:200px;
+	height:28px;
+	padding-left:10px;
+}
+
+
+
+select{
+	
+	position: relative; 
+    display: inline-block; 
+    width: 100px; 
+    height: 32px; 
+    font: 16px "Microsoft YaHei"; 
+	
+	
+}
+ 

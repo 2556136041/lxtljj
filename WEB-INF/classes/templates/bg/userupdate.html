@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>userupdate</title>
+<style>
+	     body{
+	        margin:50px;
+	     }
+	     table{
+	        margin:30px 0px;
+	     }
+	     input.inp1{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100%;
+	        height:40px;
+	        padding-left:10px;
+	        
+	     }
+	     
+	     input[type=submit]{
+	        display:inline-block;
+	        width:200px;
+	        height:40px;
+	        padding-left:10px;
+	        
+	     }
+	     
+	     input.selectbtn{
+	        display:inline-block;
+	        width:20px;
+	        height:20px;
+	        vertical-align:text-top; 
+	        margin-top:0;
+	     }
+	
+	</style>
+</head>
+<body>
+<h1>用户修改</h1>
+    <table align="center" width="600" cellpadding="10" border="1">
+    <form name="form" th:action="@{/updateuser}" th:object="${user}" method="post">
+        <tr>
+          <td>
+                          用户名
+          </td>
+          <td>
+             <input class="inp1" id="name" type="text" name="name" th:value="*{name}">
+          </td>
+          
+        </tr> 
+ 
+        <tr>
+          <td>
+                          密码
+          </td>
+          <td>
+             <input class="inp1" type="text" name="password" th:value="*{password}" >
+          </td>
+        <tr>
+          <td>
+                          电话
+          </td>
+          <td>
+             <input class="inp1" type="text" name="phone" th:value="*{phone}" >
+          </td>
+        </tr>
+        <tr>
+          <td>
+                         地址
+          </td>
+          <td>
+             <input class="inp1" type="text" name="address" th:value="*{address}" >
+          </td>
+        </tr> 
+        <tr>
+          <td>
+                          邮箱
+          </td>
+          <td>
+             <input class="inp1" type="text" name="email" th:value="*{email}" >
+          </td>
+        </tr> 
+ 
+        <tr>
+          <td colspan="2" align="center">
+             <input type="hidden" name="uid" th:value="*{uid}">
+             <input type="hidden" name="sex" th:value="*{sex}">
+             <input type="hidden" name="regtime" th:value="*{regtime}">
+             <input type="submit" value="修改">    
+          </td>
+        </tr> 
+          
+    </form>
+    </table>
+
+</body>
+</html>

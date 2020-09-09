@@ -1,0 +1,361 @@
+
+div#div_head{
+	width:100%;
+	min-height:240px;
+	background:rgb(255,187,0);
+	padding:80px 0px 30px 30px;
+	margin-bottom:30px;
+	color:white;
+	
+}
+
+#p_mycartphoto{
+	width:200px;
+	height:200px;
+	position:absolute;
+    left:200px;
+    top:0px;
+}
+
+#p_mycartphoto img{
+	width:200px;
+	height:200px;
+
+}
+
+#p_jump{
+	
+	position:absolute;
+    left:80px;
+    top:200px;
+	
+}
+div#div_head a{
+	font-family:"Microsoft YaHei";
+	font-size:18px;
+	color:white;
+	
+
+}
+
+div#div_head a:hover{
+	color:red;
+	
+
+}
+
+hr{
+ 
+  /* 
+    border-color:FF7F00; 
+  
+  */
+  height:2px;
+  border:none;
+  border-top:2px dotted #185598;
+}
+	   
+img 
+{ 
+	border:0;
+	width:90px;
+	height:60px;
+}
+table { border-collapse:collapse; }
+input { font-size:12px; }
+
+a:link, a:visited {
+	text-decoration: none;
+}
+a:hover, a:active { 
+	text-decoration: none;
+}
+
+#p_cut{
+	height:30px;
+}
+
+#shopping {
+	text-align:center; 
+	margin:10px auto;
+	width: 90%;
+}
+#shopping table {
+	width:100%; 
+	line-height:24px; 
+	border-top:2px solid #FF7F00; 
+	border-bottom:2px solid #FF7F00; 
+}
+#shopping table th { 
+	background:#FFE7BA; 
+	color:#FF7F00; 
+}
+#shopping table td { 
+	padding:10px 0; 
+	border-top:1px solid #FF7F00; 
+}
+#shopping table td.thumb img { 
+	border:1px solid #dfdfe0; 
+	margin:0 10px; 
+	vertical-align:middle; 
+}
+#shopping table td.price,#shopping table td.number { 
+	text-align:center; 
+	width:100px; 
+	border-left:1px solid #e1e1e1; 
+}
+#shopping table td.price { 
+	color:#cc3300; 
+	font-weight:bold; 
+}
+#shopping table td.delete { 
+	width:60px; 
+	text-align:center; 
+	border-left:1px solid #e1e1e1; 
+}
+#shopping table td.number span {
+	padding:0 2px;
+	border:1px #c0c0c0 solid;
+	cursor:pointer;
+}
+#shopping table td.number input { 
+	width:20px; 
+	border:1px solid #c9c9c9; 
+	padding:2px; 
+	text-align:center; 
+}
+#shopping .total{
+	height:60px;
+}
+#shopping .total span{
+	line-height:60px;
+	font-size:20px;
+}
+div.amount { 
+	width:90%;
+	margin:10px auto;
+	text-align:right; 
+	min-height:300px;
+
+}
+
+div.amount p{
+	text-align:left;
+}
+div.amount img{ 
+	width:250px;
+	height:100px;
+
+}
+div.amount input { 
+	font-size:20px;
+	color:white;
+	border:0;
+	background-color:rgba(204,0,0,0.9); 
+	width:144px;
+	height:40px; 
+	cursor:pointer; 
+}
+div.amount input:hover {
+	color:yellow;
+}
+#shopping .shadow { 
+	width:500px; 
+	margin:50px auto; 
+}
+
+ul#addr{
+	width:90%;
+	min-height:200px;
+	margin:20px auto;
+	list-style-type: none;
+	padding:0px;
+    overflow: auto;
+    font-size:20px;
+
+}
+ul#addr li{
+	padding:10px 0px;
+}
+p.p_nav{
+	width:90%;
+	margin:5px auto;
+	font-size:25px;
+	font-weight:600;
+	/*padding-bottom:10px;
+	border-bottom:1px solid black;
+	*/
+}
+
+a#addbtn{
+	padding:5px;
+	border:1px solid black;
+	color:black;
+	display:inline-block;
+	margin-left:10px;
+	
+}
+
+a#addbtn:hover{
+	background:red;
+	color:white;
+	
+}
+
+div#addform,div#addform1{
+	position:absolute;
+	display:none;
+	width:350px;
+	height:350px;
+	border:1px solid black;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	margin:auto;
+	background:white;
+	
+	
+}
+
+#closer{
+	display:block;
+	text-align:right;
+	padding:10px;
+}
+
+div#addform input,div#addform1 input{
+	display:block;
+	width:90%;
+	margin:15px auto;
+	height:40px;
+	padding-left:8px;
+	line-height:40px;
+	font-size:18px;
+	
+}
+
+
+#tab1 th{
+	text-align:center;
+}
+/*  addr   */
+
+div#addr_box{
+	
+	width:100%;
+	height:60px;
+	line-height:60px;
+	clear:both;
+}
+div#addr_box img{
+	width:40px;
+	height:40px;
+	border:0px;
+	border:none;
+}
+
+p#addr_left{
+	width:45%;
+	height:60px;
+	float:left;
+	text-align:left;
+	
+}
+
+p#addr_right{
+	width:45%;
+	height:60px;
+	float:right;
+	text-align:center;
+	
+}
+
+/* pay  */
+
+
+#cover{
+	
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity:0.9;
+  display: none;
+	
+}
+
+#paymodal{
+	
+	 position: absolute;
+     width: 450px;
+     height: 450px;
+     background: white;
+     left: 0;
+     right: 0;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     border-radius: 10px;
+     display: none;
+	
+}
+
+span#payamount{
+	
+	display:block;
+	width:200px;
+	height:200px;
+	margin:50px auto;
+	background:green;
+	line-height:200px;
+	text-align:center;
+	color:red;
+	font-size:25px;
+}
+
+#pay_closer
+{
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: black;
+
+}
+
+#pay_closer:hover
+{
+  color:red;
+  -webkit-animation: 3s;
+  -o-animation: 3s;
+  animation: 3s;
+}
+
+#btn-group{
+	
+	text-align:center;
+}
+#money{
+	width:200px;
+	heigth:50px;
+	padding-left:10px;
+	background:white;
+	border:1px solid black;
+	color:black;
+	
+}
+
+#submitbtn{
+	background:green;;
+	
+}
+
+input#orderbtn{
+	padding:5px 10px;
+	display:inline-block;
+	width:300px;
+	height:60px;
+	
+}
+

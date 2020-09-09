@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>updatepro page</title>
+<style>
+	     h1{
+	         margin-top:50px;
+	     }
+	     table{
+	        margin:30px 0px;
+	     }
+	     input.inp1{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100%;
+	        height:40px;
+	        padding-left:10px;
+	        
+	     }
+	     
+	     input[type=submit],input[type=reset]{
+	        display:inline-block;
+	        width:80px;
+	        height:40px;
+	        margin-right:20px;       
+	     
+	     }
+	     
+	     textarea{
+	        width:100%;
+	     }
+
+	     #leaderts{
+	        vertical-align:top;
+	     }
+	
+	</style>
+	<script type="text/javascript" th:src="@{/static/ckeditor/ckeditor.js}"></script>
+    <script type="text/javascript" th:src="@{/static/ckeditor/adapters/jquery.js}"></script>  
+    <script type="text/javascript">
+	
+    </script>
+</head>
+<body style="margin-left:50px;">
+    
+    <h1>修改产品</h1>
+    <table align="center" width="800" cellpadding="10" border="1">
+ 
+    <form name="form" th:action="@{/updatepro}" th:object="${pro}" method="post" th:method="post">
+
+        <tr>
+          <td>
+                         产品名称
+          </td>
+          <td>
+             <input class="inp1" type="text" name="proname" th:value="*{proname}" />
+          </td>
+        </tr>   
+               
+        <tr>
+          <td>
+                         原价
+          </td>
+          <td>
+             <input class="inp1" name="primeprice" type="text" th:value="*{primeprice}" />
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+                         促销价
+          </td>
+          <td>
+             <input class="inp1" name="presentprice" type="text" th:value="*{presentprice}" />
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+                         数量
+          </td>
+          <td>
+             <input class="inp1" name="number" type="text" th:value="*{number}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+                         图片
+          </td>
+          <td>
+             <input class="inp1" name="photo" type="text" th:value="*{photo}" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+             <textarea name="editor1" rows="150" cols="100" th:utext="*{about}"></textarea>
+		       <script type="text/javascript">
+		            CKEDITOR.replace( 'editor1' );
+		       </script>
+          </td>
+        </tr> 
+        <tr>
+          <td colspan="2" align="center">
+             <input type="hidden" name="id" th:value="*{id}">  
+             <input type="hidden" name="hits" th:value="*{hits}">
+             <input type="hidden" name="pubtime" th:value="*{pubtime}">  
+             <input type="hidden" name="material" th:value="*{material}">
+             <input type="hidden" name="protype" th:value="*{protype}">
+             <input type="submit" value="修改">  
+             <input type="reset" value="重置">    
+          </td>
+        </tr> 
+          
+    </form>
+    </table>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myspace</title>
+<style>
+	   
+       
+       div#headphoto{
+            width:160px;
+            height:160px;
+            background:black;
+            border-radius:50%;
+            position:absolute;
+            left:200px;
+            top:100px;
+            border:6px solid white;
+       }
+       
+       .headpic{
+            width:50%;
+            position: absolute;
+	        top: 0;
+	        right: 0;
+	        bottom: 0;
+	        left: 0;
+	        margin: auto;
+           
+       }
+       
+       p#p_user{
+           width:200px;
+           height:40px;
+           line-height:40px;
+           position:absolute;
+           left:380px;
+           top:175px;
+           font-size:25px;
+       
+       }
+       p#myabout{
+            position:absolute;
+            left:380px;
+            top:160px;
+            font-size:20px;
+       }
+	   div#mymes{
+	        width:150px;
+	        height:50px;
+	        border-radius:25px;
+	        border:2px solid white;
+	        line-height:50px;
+	        text-align:center;
+	        font-size:20px;
+	        position:absolute;
+            right:200px;
+            top:100px;
+	        
+	   }
+	   
+	   img#circle{
+	         transition: 0.5s;
+             transform-origin: 30px 30px;  
+             animation: rotate 1s linear infinite;  /*开始动画后无限循环，用来控制rotate*/
+	   
+	   
+	   }
+	   
+	   div#mydetails{
+	        width:350px;
+	        height:300px;
+	        position:absolute;
+            right:100px;
+            top:153px;
+            border-radius:8px;
+            border:1px solid gray;
+            background:white;
+            display:none;
+            color:black;
+            padding-left:20px;
+	   }
+	   p#p_close{
+	       width:100%;
+	       height:auto;
+	       font-size:18px;
+	       text-align:right;
+	       padding-right:13px;
+	       padding-top:10px;
+	       padding-bottom:50px;
+	   }
+	   #closer{
+	       color:black;
+	       cursor:pointer;
+	   }
+	   #closer:hover{
+	      color:red;
+	   }
+	   
+	  
+	   
+	   div#div_newslist a:hover{
+	        color:red;
+	   }
+       div#div_newslist{
+              width:90%;
+              min-height:800px;
+              margin:100px auto;
+              color:black;
+       }
+        p#btn1,p#btn2{
+	       width:100%;
+	       height:50px;
+	       line-height:50px;
+	       text-align:center;
+	       font-size:30px;
+	       background:rgb(250,204,0);
+
+	   }
+	   p#p_nav{
+	   
+	      font-size:18px;
+	   }
+	   #tab1 th{
+	   
+	       text-align:center;
+	   
+	   }
+	   
+	   #tab1 p{
+	   
+	       height:40px;
+	       line-height:40px;
+	       text-vertical:center;
+	   
+	   }
+
+	   	@keyframes rotate{
+           0%{
+                opacity: 0;
+           }
+           50%{
+    	        opacity: 0.5;
+           }
+           100%{
+                 opacity: 1;
+    	   }
+	    }
+	</style>
+	<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+   
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<script>
+	/*<![CDATA[*/
+	   $(document).ready(function(){
+	          $("#mymes").click(function(){
+	             $("#mydetails").css("display","block");
+	          });
+	          
+	          $("#closer").click(function(){
+	             $("#mydetails").css("display","none");
+	          });
+	          
+	          $("#mydetails p:gt(0)").css({"padding-left":"8px","font-size":"17px"});
+	           $(".down").click(function(){
+                    $('#tab1').slideToggle("slow");     
+		            $("#cutarea>p").toggleClass("arrow2");
+      
+    });
+	   });
+	   
+	/*]]>*/
+	</script>
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/images/common/myspace.jpg)">
+            <header>
+                <div class="container">
+                    <div  id="headphoto">
+                       <p th:if="${sex eq 1}">
+                            <img class="headpic" src="/static/images/common/boy.png" />
+                       </p>
+					   <p th:if="${sex eq 2}">
+					       <img class="headpic" src="/static/images/common/girl.png" />
+                       </p> 
+                    </div>
+                    <p id="p_user" th:text="${username}"></p>
+                </div>
+                <!--
+                <p id="myabout">
+                    <c:set var="xb" scope="session" value="${sex}"/>
+					<c:if test="${xb eq '1'}">
+					   <span>男<span>
+					</c:if>
+					<c:if test="${xb eq '2'}">
+					   <span>女<span>
+					</c:if>
+                </p>
+                 -->
+                <div id="mymes">
+                    <img id="circle" width="26px" src="/static/images/common/gerenshezhi.png" />
+                    <span style="padding-left:5px;']">个人设置</span>
+                </div>
+                <div id="mydetails">
+                    <p id="p_close"><a id="closer" href="javascript:void(0)">X</a></p>
+                    <p><b>呢称：</b><span th:text="${nickname}"></span></p>
+                    <p><b>电话：</b><span th:text="${tel}"></span></p>
+                    <p><b>邮箱：</b><span th:text="${email}"></span></p>
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_newslist">
+         <p id="p_nav"><a href="javascript:void(0)" onclick="javascript:window.location.assign('/index.html');">首页</a></p>
+	     <p id="btn1">
+             <span style="padding-left:10px;">我的订单</span>
+	     </p>
+	     <table id="tab1" border="0" cellspacing="0" cellpadding="0" width="100%">
+	        <tr>
+	            <th><p>订单号</p></th> 
+	            <th><p>商品名称</p></th> 
+	            <th><p>数量</p></th> 
+	            <th><p>金额</p></th>
+	        </tr>
+	        <tr>
+	            <td><p></p></td> 
+	            <td><p></p></td> 
+	            <td><p></p></td> 
+	            <td><p></p></td>
+	        </tr>
+	     </table>
+	    <!--
+	    <p id="btn2">
+             <span style="padding-left:10px;">待收货</span>
+             <a href="javascript:void(0)"><img id="down2" src="images/common/down.png" /></a>
+             <a href="javascript:void(0)"><img id="up2" src="images/common/up.png" /></a>
+	     </p>
+	     --> 
+    </div>
+     <!-- ================== Footer  ================== -->
+           <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+    
+     <!--JS files-->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+   
+    //点击登陆
+	function login_ajax(){
+		var username=$('#username').val();
+		var pwd=$('#pwd').val();
+	    var verifyCode=$('#verifyCode').val();
+	    if(username!="" && pwd!="" && verifyCode!=""){
+	        $.post("/login",
+		    {"username":username,"password":pwd,"submitCode":verifyCode},
+		    function(data){
+		    	if(data=="200"){
+		    		setTimeout(function(){
+		                   $('#login_btn').css("background-color","red").css('color','white').text('成功登陆');
+		                    alert('成功！'); 
+		                    window.location="/index.html";
+		             },1000); 
+		        }else if(data=="701"){ 
+		             alert('验证码有误！');
+		           
+		        }else{
+		             alert('验证码过期，请重新获取！');
+		        }  
+	       });
+	    }else{
+	        alert("不能为空")
+	    }
+	}
+    
+	//点击退出
+	function logout_ajax(){
+	        $.get("/logout",
+		    function(data){
+		           if(data=="0"){
+			             alert('成功！'); 
+			             window.location="/index.html";
+			        }else{ 
+			             alert('失败！');
+			        } 
+	       });
+	}
+	
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+   
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+
+
+#p_page{
+	
+	text-align:center;
+}
+
+#p_searchbtn{
+	width:100%;
+	height:50px;
+	background:red;
+}
+
+#p_searchbtn input{
+	display:inline-block;
+	width:100%;
+	height:100%;
+	background-color: #ffbb00;
+	outline:none;
+	border:none;
+    outline:medium;
+    
+	
+}
+
+#p_searchbtn input:hover{
+     background-color: #FF6347;
+     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+     color:white;
+}

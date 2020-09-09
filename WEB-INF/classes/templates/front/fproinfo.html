@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>龙兴联泰家具产品详情</title>
+<style>
+         
+	     
+	     /* login */
+	      input#verifyCode{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100px;
+	        height:40px;
+	        padding-left:15px;
+	     }
+    
+         img#safeCode{
+            vertical-align:middle;
+         }
+         
+         a#btn_refresh{
+            display:inline-block;
+            font-size:17px;
+         }
+         
+         /* proinfo */
+         
+         p#p_back{
+               width:100%;
+               height:30px;
+               line-hieght:30px;
+               text-align:left;
+               clear:both;
+         
+         }
+         
+         div#div_proinfo{
+         
+             width:90%;
+             height:auto;
+             clear:both;
+             margin:20px auto;
+             color:black;
+         
+         }
+         
+         div#div_l{
+             width:75%;
+             height:auto;
+             float:left;
+             color:black;
+         }
+         
+         div#div_cut{
+         
+             width:100%;
+             height:30px;
+             clear:both;
+             background:blud;
+         }
+         
+         #p_tit{
+             font-size:30px;
+            
+         }
+         .p_item{
+             font-size:16px;
+         }
+         #div_about{
+            text-align:justify;
+            text-indent:2em;
+            font-size:16px;
+            
+        
+         }
+         div#div_btn{
+            text-align:right;
+            margin-top:50px;
+         }
+         .cart_btn{
+             display:inline-block;
+             width:150px;
+             height:50px;
+             text-align:center;
+             line-height:50px;
+             background:red;
+             margin-left:15px;
+             border-radius:7px;
+         }
+         
+         .cart_btn:hover{
+            color:white;
+            background:rgb(204,0,0);
+          }
+          
+          span#sub,span#add{
+
+             height:30px;
+             font-size:20px;
+             line-height:30px;
+             color:black;
+             cursor:pointer;
+             font-weight:600;
+
+          }
+          span#sub{
+             padding-left:5px;
+          }
+          
+          span#add{
+              padding-right:5px;
+          }
+          
+          input[type=number]{
+             height:30px;
+             padding-left:3px;
+             
+          }
+
+          
+
+          
+      /* view */
+        div#div_r{
+             width:20%;
+             height:auto;
+
+             float:right;
+         }
+       p#p_viewtit{
+           font-size:22px;
+           text-align:center;
+           padding:5px 0px;
+
+       }
+	   div#div_view dd{
+	      margin:0px;
+	      font-size:17px;
+	   }
+	    div#div_view dd.dd_name
+	   {
+	      color:rgba(10,50,240,0.9);
+	      font-size:20px;
+	      text-align:center;
+	   }
+	    div#div_view dd.dd_price
+	   {
+	      color:#000;
+	      text-align:center;
+	   }
+          
+         
+	</style>
+	
+	<!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+   
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+           <div th:include="/common/common-header-notype::header"></div>
+           
+           
+        <!-- ======================== Main header ======================== -->
+
+        <section class="main-header" style="background-image:url(/static/assets/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">产品详情页</h1>
+                    <!-- <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    </ol> -->
+                </div>
+            </header>
+        </section>
+        
+    <div id="div_proinfo">
+       <p id="p_back"><img src="/static/images/common/backhead.png" width="25" height="25" align="top" />&nbsp;<a th:href="@{/fallpros}">回到产品中心</a></p>
+       <div id="div_l">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	            <tr>
+	                 <td width="550px" >
+			                  <img align="top" th:src="@{'/static/images/pros/'+${photo}}" width="90%" />
+	                 </td>
+	                 <td>
+	                          <p id="p_tit" th:text="${proname}"></p>
+	                          <p class="p_item"><b>类别：</b><span th:text="${protype}"></span>
+	                          </p>
+	                          <p class="p_item"><b>材质：</b><span th:text="${material}"></span></p>
+	                          <p class="p_item"><b>价格：</b><span th:text="${'￥'+presentprice}"></span></p>
+	                          <p class="p_item">
+	                               <b>折扣：</b><span  th:text="${#numbers.formatDecimal((primeprice-presentprice)*100/primeprice,2,0) + '折'}"></span>
+	                              
+	                              
+	                              <!--
+	                              <b>折扣：</b><span th:text="${percent}"></span>折
+	                               -->
+	                          </p>
+
+	                          <p class="p_item" style="text-vertical:center;"><span><b>购买数量：</b></span>
+	                              <span id="sub" onclick="sub()">-</span>
+	                              <input type="text" id="number" name="number" value="1" size="2"/>
+	                              <span id="add" onclick="add()">+</span>
+	                          </p>
+
+	                     <script type="text/javascript">
+	                     /*<![CDATA[*/
+								      function add()
+								      {
+								         var num = parseInt(document.getElementById("number").value);
+								         if(num<100)
+								         {
+								            document.getElementById("number").value = ++num;
+								         }
+								      }
+								      function sub()
+								      {
+								         var num = parseInt(document.getElementById("number").value);
+								         if(num>1)
+								         {
+								            document.getElementById("number").value = --num;
+								         }
+								      }
+								      
+								     //加入购物车 ajax方法
+									function addCart(id){
+								    	//alert(id);
+									    var num = $('#number').val();
+									    if(num!=""){
+									        $.get("/actioncart",
+										    {"num":num,"id":id,"action":"add"},
+										    function(data){
+										           if(data=="1"){
+											              setTimeout(function(){
+											                    alert('成功！'); 
+											                   <!-- window.location="servlet1/CartServlet?action=show"; -->
+											             },1000);
+											        }else if(data=="0"){
+											             alert('失败');
+											        }else if(data=="3"){
+											        	 alert("还未登陆！");
+											        }
+									       });
+									    }else{
+									        alert("数量不能为空")
+									    }
+									}
+								     
+							/*]]>*/ 
+								     
+							</script>
+	                          <p class="p_item"><span><b>描述：</p>
+	                          <div id="div_about" th:utext="${about}"></div>
+	                 </td>
+	            </tr>
+	            <tr>
+	                 <td colspan="2"  >
+	                    <div id="div_btn">
+	                     <!--  <a class="cart_btn " href="javascript:void(0)">立即购买</a> -->
+	                      <a class="btn btn-warning btn-lg">立即购买</a>&nbsp;&nbsp;
+	                      <a class="btn btn-warning btn-lg" href="javascript:void(0)" th:onclick="addCart([[${id}]])">加入购物车</a>&nbsp;&nbsp;
+	                      <a class="btn btn-warning btn-lg" th:href="@{/showcart}">查看购物车</a>
+	                    </div>
+	                 </td>
+	            
+	            </tr>
+            </table>
+       </div>
+       <div id="div_r">
+
+            <p id="p_viewtit"><img width="40px" align="top" th:src="@{/static/images/common/view.png}"><span style="display:inline-block;padding-bottom:5px;padding-left:5px;border-bottom:2px solid red;">浏览过的商品</span></p>
+            
+             <div id="div_view">
+             <dl th:each="proview:${proviewlist}">
+               <dt>
+                 <a th:href="@{'/fproinfo/id/'+${proview.id}}"><img th:src="@{'/static/images/pros/'+${proview.photo}}" width="100%" border="1"/></a>
+               </dt>
+               <dd class="dd_name" th:text="${proview.proname}"></dd> 
+               <dd class="dd_price" th:text="${proview.presentprice}"></dd> 
+             </dl>
+             </div>
+
+       </div>
+       
+       <div id="div_cut">
+       </div>
+    
+		  
+    </div>
+     <!-- ================== Footer  ================== -->
+        <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+    
+    <!--JS files-->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+   
+    //刷新验证码
+    function changeImg(){        
+  	   var img = document.getElementById("verityimg");         
+  	   img.src = "/kaptcha?date=" + new Date();    
+    }
+   
+    //点击登陆
+	function login_ajax(){
+		var username=$('#username').val();
+		var pwd=$('#pwd').val();
+	    var verifyCode=$('#verifyCode').val();
+	    if(username!="" && pwd!="" && verifyCode!=""){
+	        $.post("/login",
+		    {"username":username,"password":pwd,"submitCode":verifyCode},
+		    function(data){
+		    	if(data=="200"){
+		    		setTimeout(function(){
+		                   $('#login_btn').css("background-color","red").css('color','white').text('成功登陆');
+		                    alert('成功！'); 
+		                    window.location="/index.html";
+		             },1000); 
+		        }else if(data=="701"){ 
+		             alert('验证码有误！');
+		           
+		        }else if(data=="400"){
+		             alert('该用户不存在！');
+		        }  
+	       });
+	    }else{
+	        alert("不能为空")
+	    }
+	}
+    
+	//点击退出
+	function logout_ajax(){
+	        $.get("/logout",
+		    function(data){
+		           if(data=="0"){
+			             alert('成功！'); 
+			             window.location="/index.html";
+			        }else{ 
+			             alert('失败！');
+			        } 
+	       });
+	}
+	
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    
+    
+</body>
+</html>

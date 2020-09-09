@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>updateaddr</title>
+
+<style>
+    div#updateform{
+         width:90%;
+         min-height:600px;
+         margin:50px auto;
+    }
+    
+    table{
+        width:90%;
+        height:auto;
+        padding-top:20px;
+        
+    }
+    
+    table input[type=text]{
+        width:80%;
+        height:50px;
+        line-height:50px;
+        padding-left:10px;
+        font-size:18px;
+        margin:15px 0px;
+    }
+    
+    table input[type=submit]{
+        width:200px;
+        height:50px;
+        font-size:20px;
+        text-align:center;
+    }
+    
+    .ts{
+        text-align:right;
+    }
+    </style>
+    <!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+    
+    <!-- cart  -->
+</head>
+<body>
+<div class="page-loader"></div>
+
+   <div class="wrapper">
+
+   
+   <div id="updateform">
+     <p><a href="javascript:void(0)" onclick="javascript:history.go(-1);">返回</a></p>
+     <form th:action="@{/updateaddr}" th:object="${addr}" method="post" th:method="post">
+     <table align="center" border="0" cellpadding="10px" cellspacing="10" >
+       <tr>
+          <td class="ts">
+                            姓名：
+          </td>
+          <td>
+                <input type="text" id="username" name="username" th:value="*{sname}" />
+          </td>
+          
+       </tr>
+       <tr>
+          <td class="ts">
+                            地址：
+          </td>
+          <td>
+                 <input type="text" id="myaddr" name="myaddr" th:value="*{saddr}" />
+          </td>
+          
+       </tr>
+       <tr>
+          <td class="ts">
+                            手机：
+          </td>
+          <td>
+                 <input type="text" id="tel" name="tel" th:value="*{stel}" />
+          </td>
+          
+       </tr>
+        <tr>
+          <td colspan="2" align="center">
+                 <input type="hidden" id="id" name="id" th:value="*{sid}" />
+                 <input type="hidden" id="uid" name="uid" th:value="*{uid}" />
+                 <input type="hidden" id="isdefault" name="isdefault" th:value="*{isdefault}" />
+                 <input type="submit" value="确定" />
+          </td>
+          
+       </tr>
+      
+      
+       
+    </table>
+    </form>
+   </div>
+
+        
+     <!-- ================== Footer  ================== -->
+         <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+    
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script language="javascript">
+    
+		  
+   </script>
+   <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+   <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+   <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+   <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+   <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+   <script th:src="@{/static/js/main.js}"></script>  
+   <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+
+</body>
+</html>

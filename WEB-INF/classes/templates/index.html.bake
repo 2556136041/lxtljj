@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html mip>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://www.mipengine.org">
+    <link rel="stylesheet" type="text/css" href="https://c.mipcdn.com/static/v2/mip.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta http-equiv="keywords" content="龙兴联泰国际家具,龙兴联泰家具,龙兴联泰">
+	<meta http-equiv="description" content="龙兴联泰：深圳龙岗最大家具卖场，专营中高档成品定制家具">
+<title>龙兴联泰国际家具</title>
+ <!--CSS styles-->
+    <link rel="stylesheet" media="all" th:href="@{/static/css/bootstrap.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/animate.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/font-awesome.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/furniture-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/linear-icons.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/magnific-popup.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/owl.carousel.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/ion-range-slider.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" media="all" th:href="@{/static/css/promotion.css}" />
+    <link rel="shortcut icon" href="/static/images/common/favicon1.ico">
+    
+    <!--Google fonts-->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500}" rel="stylesheet">
+     <style>
+        input#verifyCode{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100px;
+	        height:40px;
+	        padding-left:15px;
+	     }
+    
+         img#safeCode{
+            vertical-align:middle;
+         }
+         
+         a#btn_refresh{
+            display:inline-block;
+            font-size:17px;
+         }
+    
+    </style>
+</head>
+<body>
+<div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <!--Use class "navbar-fixed" or "navbar-default" -->
+        <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+
+        <!-- ======================== Navigation ======================== -->
+           <div th:include="/common/common-header-notype::header"></div>
+
+        <!-- ========================  Header content ======================== -->
+
+        <section class="header-content">
+
+            <div class="owl-slider">
+
+                <!-- === slide item === -->
+
+                <div class="item" style="background-image:url(/static/assets/images/gallery-0.jpg)">
+                    <div class="box">
+                        <div class="container">
+                            <h2 class="title animated h1" data-animation="fadeInDown">乐活休闲椅</h2>
+                            <div class="animated" data-animation="fadeInUp">
+                                慢生活的诱惑 & 生活可以更阳光一点. <br /> 整理好心情 & 请从一个属于自己的小小空间开始
+                            </div>
+                            <div class="animated" data-animation="fadeInUp">
+                                <a th:href="@{/fallpros/page/1}" target="_self" class="btn btn-main" ><!-- <i class="icon icon-cart"></i> --> 开启家居之旅</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === slide item === -->
+
+                <div class="item" style="background-image:url(/static/assets/images/gallery-2.jpg)">
+                    <div class="box">
+                        <div class="container">
+                            <h2 class="title animated h1" data-animation="fadeInDown">“食尚”餐桌椅</h2>
+                            <div class="animated" data-animation="fadeInUp">餐桌上的装扮同样需要色香味俱全</div>
+                            <div class="animated" data-animation="fadeInUp">小资之家的时尚标签!</div>
+                            <div class="animated" data-animation="fadeInUp">
+                                <a th:href="@{/fallhouse/page/1}" target="_self" class="btn btn-main">开启家居之旅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === slide item === -->
+
+                <div class="item" style="background-image:url(/static/images/common/lxlt.jpg)">
+                    <div class="box">
+                        <div class="container">
+                            <h2 class="title animated h1" data-animation="fadeInDown">
+                                龙兴联泰国际家具：深圳东部家具标杆
+                            </h2>
+                            <div class="desc animated" data-animation="fadeInUp">
+                                民用办公.应有尽有!
+                            </div>
+                            <div class="desc animated" data-animation="fadeInUp">
+                                居家生活好帮手
+                            </div>
+                            <div class="animated" data-animation="fadeInUp">
+                                <a th:href="@{/about.html}" target="_blank" class="btn btn-main">开启家居之旅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--/owl-slider-->
+        </section>
+
+        <!-- ========================  Icons slider ======================== -->
+
+        <section class="owl-icons-wrapper owl-icons-frontpage">
+
+            <!-- === header === -->
+
+            <header class="hidden">
+                <h2>Product categories</h2>
+            </header>
+
+            <div class="container">
+
+                <div class="owl-icons">
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-sofa"></i>
+                            <figcaption>沙发</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-armchair"></i>
+                            <figcaption>单人沙发</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-chair"></i>
+                            <figcaption>椅子</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-dining-table"></i>
+                            <figcaption>餐桌</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-media-cabinet"></i>
+                            <figcaption>地柜</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-table"></i>
+                            <figcaption>茶几</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-bookcase"></i>
+                            <figcaption>书柜</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-bedroom"></i>
+                            <figcaption>卧房</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-nightstand"></i>
+                            <figcaption>床头柜</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-children-room"></i>
+                            <figcaption>儿童房</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-kitchen"></i>
+                            <figcaption>厨房</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-bathroom"></i>
+                            <figcaption>浴室</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-wardrobe"></i>
+                            <figcaption>衣柜</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-shoe-cabinet"></i>
+                            <figcaption>鞋柜</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-office"></i>
+                            <figcaption>办公</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-bar-set"></i>
+                            <figcaption>吧台</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-lightning"></i>
+                            <figcaption>灯具</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-carpet"></i>
+                            <figcaption>床品</figcaption>
+                        </figure>
+                    </a>
+
+                    <!-- === icon item === -->
+
+                    <a href="javascript:void(0)">
+                        <figure>
+                            <i class="f-icon f-icon-accessories"></i>
+                            <figcaption>器皿</figcaption>
+                        </figure>
+                    </a>
+
+                </div> <!--/owl-icons-->
+            </div> <!--/container-->
+        </section>
+
+        <!-- ========================  Products widget ======================== -->
+
+        <section class="products">
+
+            <div class="container">
+
+                <!-- === header title === -->
+
+                <header>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2 class="title">产品中心</h2>
+                            <div class="text">
+                                <p>睇睇最新潮品</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+ 
+                <div class="row">
+                    <!-- === product-item === -->
+                
+                     <div class="col-md-4 col-xs-6" th:each="sixpro:${sixpro}">
+                        
+                        <article>
+                           <div class="info">
+                                <span class="add-favorite added">
+                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+                                </span>
+                                <span>
+                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+                                </span>
+                            </div> 
+                            <div class="btn btn-add">
+                                <i class="icon icon-cart"></i>
+                            </div>
+                             
+                            <div class="figure-grid">
+                           <!-- 
+                                 <span class="label label-info">
+                                       <fmt:formatNumber value="${fn:substring((pros.primeprice-pros.presentprice)*100/pros.primeprice,0,3)}" maxIntegerDigits="2" type="number"/>折
+                                 </span>
+                            -->
+                                <div class="image">
+                                    <!--  <a href="#productid1" class="mfp-open">  -->
+                                        <a th:href="@{'/fproinfo/id/'+${sixpro.id}}">
+                                        <img th:src="@{'/static/images/pros/'+${sixpro.photo}}" alt="" width="360" />
+                                    </a>
+                                </div>
+                                <div class="text">
+                                    <h2 class="title h4" style="text-shadow:2px 2px white;"><a th:href="@{/fproinfo(id=${sixpro.id})}" th:text="${sixpro.proname}"></a></h2>
+                                    <sup><h4 th:text="${sixpro.presentprice+'0'}" style="color:red;text-shadow:2px 2px white;"></h4></sup>
+                                    <span class="description clearfix"></span>
+                                </div>
+                            </div>
+                        </article>
+                      
+                    </div>
+                </div> <!--/row-->
+               
+                
+                <!-- === button more === -->
+
+                <div class="wrapper-more">
+                    <a th:href="@{/fallpros/page/1}" class="btn btn-main">全部产品</a>
+                </div>
+
+                <!-- ========================  Product info popup - quick view ======================== -->
+
+                <div class="popup-main mfp-hide" id="productid1">
+
+                    <!-- === product popup === -->
+
+                    <div class="product">
+
+                        <!-- === popup-title === -->
+
+                        <div class="popup-title">
+                            <div class="h1 title">Laura <small>product category</small></div>
+                        </div>
+
+                        <!-- === product gallery === -->
+
+                        <div class="owl-product-gallery">
+                            <img src="/static/assets/images/product-1.png" alt="" width="640" />
+                            <img src="/static/assets/images/product-2.png" alt="" width="640" />
+                            <img src="/static/assets/images/product-3.png" alt="" width="640" />
+                            <img src="/static/assets/images/product-4.png" alt="" width="640" />
+                        </div>
+
+                        <!-- === product-popup-info === -->
+
+                        <div class="popup-content">
+                            <div class="product-info-wrapper">
+                                <div class="row">
+
+                                    <!-- === left-column === -->
+
+                                    <div class="col-sm-6">
+                                        <div class="info-box">
+                                            <strong>Maifacturer</strong>
+                                            <span>Brand name</span>
+                                        </div>
+                                        <div class="info-box">
+                                            <strong>Materials</strong>
+                                            <span>Wood, Leather, Acrylic</span>
+                                        </div>
+                                        <div class="info-box">
+                                            <strong>Availability</strong>
+                                            <span><i class="fa fa-check-square-o"></i> in stock</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- === right-column === -->
+
+                                    <div class="col-sm-6">
+                                        <div class="info-box">
+                                            <strong>Available Colors</strong>
+                                            <div class="product-colors clearfix">
+                                                <span class="color-btn color-btn-red"></span>
+                                                <span class="color-btn color-btn-blue checked"></span>
+                                                <span class="color-btn color-btn-green"></span>
+                                                <span class="color-btn color-btn-gray"></span>
+                                                <span class="color-btn color-btn-biege"></span>
+                                            </div>
+                                        </div>
+                                        <div class="info-box">
+                                            <strong>Choose size</strong>
+                                            <div class="product-colors clearfix">
+                                                <span class="color-btn color-btn-biege">S</span>
+                                                <span class="color-btn color-btn-biege checked">M</span>
+                                                <span class="color-btn color-btn-biege">XL</span>
+                                                <span class="color-btn color-btn-biege">XXL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!--/row-->
+                            </div> <!--/product-info-wrapper-->
+                        </div> <!--/popup-content-->
+                        <!-- === product-popup-footer === -->
+
+                        <div class="popup-table">
+                            <div class="popup-cell">
+                                <div class="price">
+                                    <span class="h3">$ 1999,00 <small>$ 2999,00</small></span>
+                                </div>
+                            </div>
+                            <div class="popup-cell">
+                                <div class="popup-buttons">
+                                    <a href="product.html"><span class="icon icon-eye"></span> <span class="hidden-xs">View more</span></a>
+                                    <a href="javascript:void(0);"><span class="icon icon-cart"></span> <span class="hidden-xs">Buy</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!--/product-->
+                </div> <!--popup-main-->
+            </div> <!--/container-->
+        </section>
+
+        <!-- ========================  Stretcher widget ======================== -->
+
+        <section class="stretcher-wrapper">
+
+            <!-- === stretcher header === -->
+
+            <header class="hidden">
+                <!--remove class 'hidden'' to show section header -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h1 class="h2 title">Popular categories</h1>
+                            <div class="text">
+                                <p>
+                                                                    无论你是在换房子，还是搬进新家，你都会发现您会发现大量高品质的客厅家具、卧室家具、餐厅家具和最佳价值的家具
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- === stretcher === -->
+
+            <ul class="stretcher">
+
+                <!-- === stretcher item === -->
+
+                <li class="stretcher-item" style="background-image:url(/static/assets/images/gallery-0.jpg);">
+                    <!--logo-item-->
+                    <div class="stretcher-logo">
+                        <div class="text">
+                            <span class="f-icon f-icon-bedroom"></span>
+                            <span class="text-intro">休闲空间</span>
+                        </div>
+                    </div>
+                    <!--main text-->
+                    <figure>
+                        <h4>临台听风感受时光之美</h4>
+                        <figcaption>新休闲主义主张</figcaption>
+                    </figure>
+                    <!--anchor-->
+                    <a href="javascript:void(0)">Anchor link</a>
+                </li>
+
+                <!-- === stretcher item === -->
+
+                <li class="stretcher-item" style="background-image:url(/static/assets/images/gallery-2.jpg);">
+                    <!--logo-item-->
+                    <div class="stretcher-logo">
+                        <div class="text">
+                            <span class="f-icon f-icon-sofa"></span>
+                            <span class="text-intro">餐厅空间</span>
+                        </div>
+                    </div>
+                    <!--main text-->
+                    <figure>
+                        <h4>快乐时光每食每刻</h4>
+                        <figcaption>氛围搭配得好可以增进食欲</figcaption>
+                    </figure>
+                    <!--anchor-->
+                    <a href="javascript:void(0)">Anchor link</a>
+                </li>
+
+                <!-- === stretcher item === -->
+
+                <li class="stretcher-item" style="background-image:url(/static/assets/images/gallery-3.jpg);">
+                    <!--logo-item-->
+                    <div class="stretcher-logo">
+                        <div class="text">
+                            <span class="f-icon f-icon-office"></span>
+                            <span class="text-intro">书房空间</span>
+                        </div>
+                    </div>
+                    <!--main text-->
+                    <figure>
+                        <h4>灵动书房宁静相伴</h4>
+                        <figcaption>完全属于你的个人私享空间</figcaption>
+                    </figure>
+                    <!--anchor-->
+                    <a href="javascript:void(0)">Anchor link</a>
+                </li>
+
+                <!-- === stretcher item === -->
+
+                <li class="stretcher-item" style="background-image:url(/static/assets/images/gallery-4.jpg);">
+                    <!--logo-item-->
+                    <div class="stretcher-logo">
+                        <div class="text">
+                            <span class="f-icon f-icon-bathroom"></span>
+                            <span class="text-intro">睡眠空间</span>
+                        </div>
+                    </div>
+                    <!--main text-->
+                    <figure>
+                        <h4>温馨卧房舒适迷人</h4>
+                        <figcaption>满足你对家和爱的所有美好期待</figcaption>
+                    </figure>
+                    <!--anchor-->
+                    <a href="javascript:void(0)">Anchor link</a>
+                </li>
+
+                <!-- === stretcher item more=== -->
+
+                <li class="stretcher-item more">
+                    <div class="more-icon">
+                        <span data-title-show="显示更多" data-title-hide="+"></span>
+                    </div>
+                    <a onclick="showmore()" href="javascript:void(0)"></a>
+                </li>
+
+                <script>
+                        function showmore(){
+                            alert("空间大赏栏目还未开通！");
+                        }
+                </script>
+            </ul>
+        </section>
+
+        <!-- ========================  Blog Block ======================== -->
+
+        <section class="blog blog-block">
+
+            <div class="container">
+
+                <!-- === blog header === -->
+
+                <header>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2 class="title">居家攻略</h2>
+                            <div class="text">
+                                <p>做减法，可以让家更美观</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="row">
+
+                    <!-- === blog item === -->
+                    <div class="col-sm-4" th:each="threehouse:${threehouse}">
+                        <article>
+                            <a href="javascript:void(0)">
+                                <div class="image">
+                                    <img th:src="@{'/static/images/housemethod/'+${threehouse.photo}}" alt="" />
+                                </div>
+                                <div class="entry entry-block">
+                                    <div class="date" th:text="${#dates.format(threehouse.pubtime, 'yyyy-MM-dd')}"></div>
+                                    <div class="title">
+                                        <h2 class="h3" th:test="${threehouse.title}"></h2>
+                                    </div>
+                                    <div class="description">
+                                        <p th:text="${threehouse.leader}">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="show-more">
+                                    <a th:href="@{'/fhouseinfo/id/'+${threehouse.id}}"><span class="btn btn-main btn-block"> 详情</span></a>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+                </div> <!--/row-->
+                <!-- === button more === -->
+
+                <div class="wrapper-more">
+                    <a th:href="@{/fallhouse/page/1}" class="btn btn-main">开启居家攻略</a>
+                </div>
+
+            </div> <!--/container-->
+        </section>
+
+        <!-- ========================  Banner ======================== -->
+
+        <section class="banner" style="background-image:url(/static/assets/images/gallery-4.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8 text-center">
+                        <h2 class="title">品牌故事</h2>
+                        <p>品牌是一种力量，能够推动着时尚成为一种流行文化。在芸芸众生、林林总总的家居品牌中，每一个品牌都有属于它自己的个性和语言，你只有熟悉它、理解它，才能找到属于自己个性的家具，扮靓理想的家。</p>
+                        <p><a th:href="@{/fallbrand/page/1}" class="btn btn-clean">开启品牌之旅</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================  Blog ======================== -->
+
+
+        <!-- ========================  Instagram ======================== -->
+
+        <section class="instagram">
+
+            <!-- === instagram header === -->
+
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2 class="h2 title">关注官微 <i class="fa fa-instagram fa-2x"></i> 照片墙 </h2>
+                            <div class="text">
+                                <p><a onmouseover="getqr()" onmouseout="closeqr()" href="javascript:void(0)">@龙兴联泰家居</a></p>
+                                <p id="p_qr" style="background: red;width:200px;height: 200px;position: absolute;left:290px;top:-130px;display: none;z-index: 1234;"><img width="200px" height="200px" src="/static/images/common/qr1.jpg" alt=""></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <script>
+                 function getqr(){
+                      var p_qr=document.getElementById('p_qr');
+                      p_qr.style.display='block';
+
+                 }
+
+                 function closeqr(){
+                      var p_qr=document.getElementById('p_qr');
+                      p_qr.style.display='none';
+
+                 }
+
+
+            </script>
+
+
+            <!-- === instagram gallery === -->
+
+            <div class="gallery clearfix">
+                <a class="item" href="#">
+                    <img src="/static/assets/images/square-1.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="/static/assets/images/square-2.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="/static/assets/images/square-3.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="/static/assets/images/square-4.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="/static/assets/images/square-5.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="/static/assets/images/square-6.jpg" alt="Alternate Text" />
+                </a>
+
+            </div> <!--/gallery-->
+
+        </section>
+      <!-- ================== Footer  ================== -->
+        <div th:include="/common/common-footer::footer"></div>
+
+    </div> <!--/wrapper-->
+    
+    <!--JS files-->
+    <script type="text/javascript">
+  
+    /*<![CDATA[*/
+   
+    //刷新验证码
+    function changeImg(){        
+  	   var img = document.getElementById("verityimg");         
+  	   img.src = "/kaptcha?date=" + new Date();    
+    }
+   
+    //点击登陆
+	function login_ajax(){
+		var username=$('#username').val();
+		var pwd=$('#pwd').val();
+	    var verifyCode=$('#verifyCode').val();
+	    if(username!="" && pwd!="" && verifyCode!=""){
+	        $.post("/login",
+		    {"username":username,"password":pwd,"submitCode":verifyCode},
+		    function(data){
+		    	if(data=="200"){
+		    		setTimeout(function(){
+		                   $('#login_btn').css("background-color","red").css('color','white').text('成功登陆');
+		                    alert('成功！'); 
+		                    window.location="/index.html";
+		             },1000); 
+		        }else if(data=="701"){ 
+		             alert('验证码有误！');
+		           
+		        }else if(data=="400"){
+		             alert('该用户不存在！');
+		        }  
+	       });
+	    }else{
+	        alert("不能为空")
+	    }
+	}
+    
+	//点击退出
+	function logout_ajax(){
+	        $.get("/logout",
+		    function(data){
+		           if(data=="0"){
+			             alert('成功！'); 
+			             window.location="/index.html";
+			        }else{ 
+			             alert('失败！');
+			        } 
+	       });
+	}
+	
+	//点击提交邮箱地址
+	function submit_ajax(){
+	    var email=$('#email').val();
+	    if(email!=""){
+	       var reg=/^[0-9a-zA-Z-][0-9a-zA-Z-\._]+@[a-z0-9]+\.(com)(\.(cn))?$/;
+	       if(!reg.test(email)){
+	             alert("邮箱不合法");
+	             $('#email').val('');
+	             return false;
+	       }else{
+	             $.post("/sendemail",
+				    {"email":email},
+				    function(data){
+				           if(data=="1"){
+					              alert('提交成功！'); 
+					              $('#email').val('');
+					        }else if(data=="3"){
+					              alert('不要重复提交或者有重名邮箱！'); 
+					              $('#email').val('');
+					        }else{
+					        	  alert('提交失败！'); 
+					              $('#email').val('');
+					        }
+			        });
+	       }
+			        
+	    }else{
+	        alert("不能为空");
+	        $("#email").focus();
+	    }
+	}
+    
+	/*]]>*/      
+    </script>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/jquery.bootstrap.js}"></script>
+    <script th:src="@{/static/js/jquery.magnific-popup.js}"></script>
+    <script th:src="@{/static/js/jquery.owl.carousel.js}"></script>
+    <script th:src="@{/static/js/jquery.ion.rangeSlider.js}"></script>
+    <script th:src="@{/static/js/jquery.isotope.pkgd.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>  
+    <script type="text/javascript" th:src="@{/static/js/checkform.js}"> </script> 
+    <script src="https://c.mipcdn.com/static/v2/mip.js" async="async"></script>
+    <script th:src="@{/static/js/counter.js}"></script> 
+</body>
+</html>

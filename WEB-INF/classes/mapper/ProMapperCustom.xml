@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtljj.mapper.ProMapperCustom" >
+
+  
+  <!-- 查询当前id下一条内容 -->
+	<select id="queryNextproInfoById" resultType="com.lxtljj.pojo.Profurniture" 
+										 parameterType="java.lang.Integer" >
+	    select * from Profurniture where id &gt; #{id,jdbcType=INTEGER} order by id desc limit 1
+	</select>
+   <!-- 查询当前id上一条内容 -->
+	<select id="queryPreproInfoById" resultType="com.lxtljj.pojo.Profurniture" 
+										 parameterType="java.lang.Integer" >
+	    select * from Profurniture where id &lt; #{id,jdbcType=INTEGER} order by id desc limit 1
+	</select>
+    <!-- 查前六条数量，供首页调用  -->
+	<select id="queryFproSixData" resultType="com.lxtljj.pojo.Profurniture" 
+										 parameterType="java.lang.Integer" >
+	    select id,proname,presentprice,photo from Profurniture order by id desc limit 6
+	</select>
+	<update id="updateproHits" parameterType="com.lxtljj.pojo.Profurniture">
+        update Profurniture
+        <set>
+            <if test="_parameter!=null">hits=hits+1</if>
+        </set>
+        where id=#{id}
+     </update>
+</mapper>
+
+

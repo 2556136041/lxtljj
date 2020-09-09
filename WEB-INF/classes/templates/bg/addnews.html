@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+   <!--  <script th:src="@{/js/test.js}" th:inline="javascript"></script>
+    -->
+    <style>
+	     p#p_leader{
+	         width:800px;
+	     }
+	     h1{
+	         margin-top:50px;
+	         text-align:center;
+	         width:800px;
+	     }
+	     table{
+	        margin:30px 0px;
+	     }
+	     input.inp1{
+	        margin-top:15px;
+	        display:inline-block;
+	        width:100%;
+	        height:40px;
+	        padding-left:10px;
+	        
+	     }
+	     
+	     input[type=submit],input[type=reset]{
+	        display:inline-block;
+	        width:80px;
+	        height:40px;
+	        margin-right:20px;       
+	     
+	     }
+	     
+	     textarea{
+	        width:100%;
+	     }
+
+	     #leaderts{
+	        vertical-align:top;
+	     }
+	
+	</style>
+    <script type="text/javascript" th:src="@{/static/ckeditor/ckeditor.js}"></script>
+    <script type="text/javascript" th:src="@{/static/ckeditor/adapters/jquery.js}"></script>  
+</head>
+<body style="margin-left:50px;">
+    <p id="p_leader"><b>当前位置：</b>新闻>>添加</p>
+    <h1>添加新闻</h1>
+    <table align="center" width="800" cellpadding="10" border="1">
+         <tr>
+          <td colspan="2">
+             <form th:action="@{/fileUploadNews}" method="post" enctype="multipart/form-data">
+               <p>选择文件：<input type="file" name="file" /></p>
+               <p style="text-align:center;"><input type="submit" value="提交"/></p>   
+             </form>
+          <p th:if="${filename!=null}"><img th:src="@{'/static/images/news/'+${filename}}"/></p>
+          </td>
+        </tr> 
+
+<form th:action="@{/dopostnews}" method="post" th:method="post">
+      <tr>
+          <td>
+                         标题
+          </td>
+          <td>
+             <input class="inp1" id="title" type="text" name="title" />
+          </td>
+          
+        </tr> 
+        <tr>
+          <td>
+                          作者
+          </td>
+          <td>
+             <input class="inp1" id="author" type="text" name="author" />
+          </td>
+        </tr>   
+         <tr>
+          <td id="leaderts">
+                          导语
+          </td>
+          <td>
+             <textarea rows="10" cols="50" name="leader" id="leader"></textarea>
+          </td>
+          </td>
+        </tr> 
+        <tr>
+          <td colspan="2">
+             <textarea name="content" rows="50" cols="100" >&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+		       <script type="text/javascript">
+		            CKEDITOR.replace( 'content' );
+		       </script>
+          </td>
+        </tr>  
+        <tr>
+          <td colspan="2" align="center">
+            <input type="hidden" name="photo" th:value="${filename}"/><br />
+            <input type="submit" value="提交"/>
+        </td>
+        </tr> 
+     </form>
+   </table>
+</body>
+</html>
